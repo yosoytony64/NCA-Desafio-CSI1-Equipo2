@@ -11,7 +11,7 @@ import java.sql.*;
 public class Conexion {
    static String url="jdbc:mysql://localhost:3306/casino";
    static String user="root";
-   static String pass="Barsi.22";
+   static String pass="yosoytony64*";
     
     public static Connection conectar() {
     Connection con = null;
