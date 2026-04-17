@@ -21,7 +21,7 @@ CREATE TABLE Usuarios (
 -- RELACIÓN: Si borras el usuario, el registro de cliente se elimina (CASCADE).
 create table Clientes(
 	id_usuario INT PRIMARY KEY,
-	saldo DECIMAL(10,2) DEFAULT 0 CHECK (saldo >= 0),
+	aura DECIMAL(10,2) DEFAULT 0 CHECK (aura >= 0),
 	FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
 	ON DELETE CASCADE ON UPDATE CASCADE
 );
