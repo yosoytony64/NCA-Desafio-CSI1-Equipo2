@@ -4,6 +4,14 @@
  */
 package caballos365;
 
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 /**
  *
  * @author alber
@@ -44,7 +52,7 @@ Conexion con = new Conexion();
 
         jLabel1.setText("Nombre");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 310, -1));
 
         jLabel2.setText("Edad");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, -1));
@@ -54,7 +62,7 @@ Conexion con = new Conexion();
                 jTextField2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 600, -1));
 
         jLabel3.setText("email");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
@@ -64,7 +72,7 @@ Conexion con = new Conexion();
                 jTextField3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 280, -1));
 
         jLabel4.setText("contraseña");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
@@ -74,7 +82,7 @@ Conexion con = new Conexion();
                 jTextField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 230, -1));
 
         jToggleButton1.setText("jToggleButton1");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +113,30 @@ Conexion con = new Conexion();
         String nombre=jTextField1.getText();
         String edad=jTextField2.getText();
         String email=jTextField3.getText();
-        String contraseña=jTextField4.getText();
+        String contraseña=jTextField4.getText();    
+        
+        if (nombre.isEmpty() || edad.isEmpty() || email.isEmpty() || contraseña.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Introduce los datos");
+            
+        }else{
+            Connection conexionReal = Conexion.conectar();
+            
+            String consulta = "INSERT INTO usuarios (nombre,edad,email,contraseña)values('"+nombre+"','"+edad+"','"+email+"','"+contraseña+"')";
+            try {
+                java.sql.PreparedStatement ps = conexionReal.prepareStatement(consulta);
+                ps.executeUpdate();
+                limpiar();
+            } catch (SQLException ex) {
+                Logger.getLogger(pantalla.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "NO se han registrado los datos22") ;
+            }
+            
+            try{
+                JOptionPane.showMessageDialog(null, "Datos Guardados");
+            }catch (Exception e){
+               JOptionPane.showMessageDialog(null, "NO se han registrado los datos") ;
+            }
+        }
 
 
     }//GEN-LAST:event_jToggleButton1ActionPerformed
@@ -156,4 +187,13 @@ Conexion con = new Conexion();
     private javax.swing.JTextField jTextField4;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
+
+void limpiar(){
+    jTextField1.setText("");
+    jTextField2.setText("");
+    jTextField3.setText("");
+    jTextField4.setText("");
 }
+}
+
+

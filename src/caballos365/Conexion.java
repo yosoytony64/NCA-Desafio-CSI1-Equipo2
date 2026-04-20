@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package caballos365;
-import java.sql.*;
+import java.sql.Connection; // Usa la interfaz estándar
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 /**
  *
  * @author alber
@@ -11,7 +14,7 @@ import java.sql.*;
 public class Conexion {
    static String url="jdbc:mysql://localhost:3306/casino";
    static String user="root";
-   static String pass="1234";
+   static String pass="";
     
     public static Connection conectar() {
     Connection con = null;
