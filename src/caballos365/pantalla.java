@@ -48,23 +48,17 @@ Conexion con = new Conexion();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jDialog1.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog1.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog1.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         jLabel2.setText("USUAIOS");
         jDialog1.getContentPane().add(jLabel2, java.awt.BorderLayout.CENTER);
 
-        jDialog2.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog2.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog2.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         jLabel3.setText("ADMIN");
         jDialog2.getContentPane().add(jLabel3, java.awt.BorderLayout.CENTER);
 
-        jDialog3.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog3.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog3.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1920, 1080));
@@ -111,9 +105,6 @@ Conexion con = new Conexion();
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/IMAGEN (1).jpg"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(1920, 1080));
-        jLabel1.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jLabel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
