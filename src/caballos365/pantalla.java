@@ -41,23 +41,25 @@ Conexion con = new Conexion();
         jDialog2 = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         jDialog3 = new javax.swing.JDialog();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jTextField1 = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jDialog1.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog1.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog1.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         jLabel2.setText("USUAIOS");
         jDialog1.getContentPane().add(jLabel2, java.awt.BorderLayout.CENTER);
 
-        jDialog2.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog2.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog2.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         jLabel3.setText("ADMIN");
         jDialog2.getContentPane().add(jLabel3, java.awt.BorderLayout.CENTER);
@@ -65,6 +67,57 @@ Conexion con = new Conexion();
         jDialog3.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog3.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog3.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jDialog3.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField3.setBackground(new java.awt.Color(74, 47, 29));
+        jTextField3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField3.setBorder(null);
+        jTextField3.setName("USUARIO"); // NOI18N
+        jDialog3.getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 590, 270, 40));
+
+        jTextField5.setBackground(new java.awt.Color(74, 47, 29));
+        jTextField5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField5.setBorder(null);
+        jTextField5.setName("USUARIO"); // NOI18N
+        jDialog3.getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 490, 270, 40));
+
+        jTextField2.setBackground(new java.awt.Color(74, 47, 29));
+        jTextField2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setBorder(null);
+        jTextField2.setName("USUARIO"); // NOI18N
+        jDialog3.getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 270, 40));
+
+        jTextField4.setBackground(new java.awt.Color(74, 47, 29));
+        jTextField4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField4.setBorder(null);
+        jTextField4.setName("USUARIO"); // NOI18N
+        jDialog3.getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 590, 270, 40));
+
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jDialog3.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 703, 130, 30));
+
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jDialog3.getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 500, 360, 90));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/egitro.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jDialog3.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1880, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1920, 1080));
@@ -92,14 +145,6 @@ Conexion con = new Conexion();
         jTextField1.setName("USUARIO"); // NOI18N
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, 360, 40));
 
-        jToggleButton1.setText("jToggleButton1");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 130, 30));
-
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -111,46 +156,10 @@ Conexion con = new Conexion();
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/IMAGEN (1).jpg"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(1920, 1080));
-        jLabel1.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jLabel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-/*
-        String nombre=jTextField1.getText();
-        String edad=jTextField2.getText();
-        String email=jTextField3.getText();
-        String contraseña=jTextField4.getText();
-
-        if (nombre.isEmpty() || edad.isEmpty() || email.isEmpty() || contraseña.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Introduce los datos");
-
-        }else{
-            Connection conexionReal = Conexion.conectar();
-
-            String consulta = "INSERT INTO usuarios (nombre,edad,email,contraseña)values('"+nombre+"','"+edad+"','"+email+"','"+contraseña+"')";
-            try {
-                java.sql.PreparedStatement ps = conexionReal.prepareStatement(consulta);
-                ps.executeUpdate();
-                limpiar();
-            } catch (SQLException ex) {
-                Logger.getLogger(pantalla.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(null, "NO se han registrado los datos22") ;
-            }
-
-            try{
-                JOptionPane.showMessageDialog(null, "Datos Guardados");
-            }catch (Exception e){
-                JOptionPane.showMessageDialog(null, "NO se han registrado los datos") ;
-            }
-        }
-*/
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
  jDialog3.setVisible(true);        // TODO add your handling code here:
@@ -169,10 +178,14 @@ Conexion con = new Conexion();
                     String nivel_acceso=rs.getString("nivel_acceso");
                     if (nivel_acceso.equalsIgnoreCase("Usuario")) {
                         jDialog1.setVisible(true);
+                        pantalla obj_pantalla = new pantalla();
+        obj_pantalla.setVisible(false);
                         
                     }
                     if (nivel_acceso.equalsIgnoreCase("Administrador")) {
                         jDialog2.setVisible(true);
+                        pantalla obj_pantalla = new pantalla();
+        obj_pantalla.setVisible(false);
                         
                     }
                     
@@ -187,6 +200,58 @@ Conexion con = new Conexion();
             JOptionPane.showMessageDialog(null, "Introduzca Los Datos");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    pantalla obj_pantalla = new pantalla();
+        obj_pantalla.setVisible(true);   
+        jDialog3.setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+     String nombre=jTextField2.getText();
+        String edadTexto=jTextField3.getText();
+        String email=jTextField5.getText();
+        String contraseña=jTextField4.getText();
+
+        if (nombre.isEmpty() || edadTexto.isEmpty() || email.isEmpty() || contraseña.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Introduce los datos");
+            
+                
+            
+
+        }else{
+            try {
+        int edad = Integer.parseInt(edadTexto);
+
+        if (edad < 18) {
+            JOptionPane.showMessageDialog(null, "Debes ser mayor de edad");
+            return;
+        }
+            Connection conexionReal = Conexion.conectar();
+
+            String consulta = "INSERT INTO usuarios (nombre,edad,email,contraseña)values('"+nombre+"','"+edad+"','"+email+"','"+contraseña+"')";
+            try {
+                java.sql.PreparedStatement ps = conexionReal.prepareStatement(consulta);
+                ps.executeUpdate();
+                limpiar();
+            } catch (SQLException ex) {
+                Logger.getLogger(pantalla.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "NO se han registrado los datos22") ;
+            }catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Edad inválida");
+    }
+
+            try{
+                JOptionPane.showMessageDialog(null, "Datos Guardados");
+            }catch (Exception e){
+                JOptionPane.showMessageDialog(null, "NO se han registrado los datos") ;
+            }
+            
+            }catch (Exception e){
+                JOptionPane.showMessageDialog(null, "NO se han registrado los datos") ;
+            }
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,24 +291,30 @@ Conexion con = new Conexion();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
-/*
+
 void limpiar(){
     jTextField1.setText("");
     jTextField2.setText("");
     jTextField3.setText("");
     jTextField4.setText("");
 }
-*/
+
 }
 
 
