@@ -64,9 +64,7 @@ Conexion con = new Conexion();
         jLabel3.setText("ADMIN");
         jDialog2.getContentPane().add(jLabel3, java.awt.BorderLayout.CENTER);
 
-        jDialog3.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog3.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog3.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog3.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField3.setBackground(new java.awt.Color(74, 47, 29));
