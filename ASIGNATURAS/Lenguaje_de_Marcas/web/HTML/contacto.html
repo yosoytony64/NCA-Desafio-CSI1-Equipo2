@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contacta con el Hipódromo Solidario. Reserva entradas, información sobre apuestas benéficas y colaboraciones con ONGs.">
+    <meta name="description"
+        content="Contacta con el Hipódromo Solidario. Reserva entradas, información sobre apuestas benéficas y colaboraciones con ONGs.">
     <title>Contacto – Hipódromo Solidario</title>
     <link rel="stylesheet" href="../bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/Carrera_Caballos.css">
 </head>
+
 <body>
 
-    <!-- ===== NAVBAR ===== -->
+
     <header>
         <nav class="navbar navbar-expand-lg w-100 p-0">
             <div class="container-fluid px-0">
                 <a class="navbar-brand mb-0" href="Pagina web de los caballos.html" id="brand-link">
-                    La Salle <span id="Beats">Beats</span>
+                    STUDIO <span id="Beats">WinstHorse</span>
                 </a>
-                <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navMenu"
-                        aria-controls="navMenu"
-                        aria-expanded="false"
-                        aria-label="Abrir menú">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                    aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
                     <span class="navbar-toggler-icon-custom">☰</span>
                 </button>
                 <div class="collapse navbar-collapse" id="navMenu">
@@ -37,57 +36,52 @@
         </nav>
     </header>
 
-    <!-- ===== HERO ===== -->
+
     <section class="subpage-hero">
         <h1>✉️ Contacto y Entradas</h1>
         <div class="subpage-divider"></div>
-        <p>¿Quieres asistir al evento, colaborar con nuestras ONGs o tienes alguna pregunta? Escríbenos y te responderemos lo antes posible.</p>
+        <p>¿Quieres asistir al evento, colaborar con nuestras ONGs o tienes alguna pregunta? Escríbenos y te
+            responderemos lo antes posible.</p>
     </section>
 
-    <!-- ===== FORMULARIO Y INFO ===== -->
+
     <section class="contacto-seccion">
         <div class="container">
             <div class="row g-4">
 
-                <!-- FORMULARIO -->
+
                 <div class="col-lg-7">
                     <div class="form-card">
-                        <h2 style="color:#e5ff00; font-size:1.5rem; margin-bottom:28px; font-weight:bold;">📋 Formulario de Contacto</h2>
+                        <h2 style="color:#e5ff00; font-size:1.5rem; margin-bottom:28px; font-weight:bold;">📋 Formulario
+                            de Contacto</h2>
 
                         <form id="formularioContacto" novalidate>
 
-                            <!-- Nombre -->
+
                             <div class="row g-3 mb-1">
                                 <div class="col-md-6">
                                     <label for="nombre" class="form-label-custom">👤 Nombre</label>
-                                    <input type="text" id="nombre" name="nombre"
-                                           class="form-input-custom"
-                                           placeholder="Tu nombre completo"
-                                           required>
+                                    <input type="text" id="nombre" name="nombre" class="form-input-custom"
+                                        placeholder="Tu nombre completo" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="apellidos" class="form-label-custom">👤 Apellidos</label>
-                                    <input type="text" id="apellidos" name="apellidos"
-                                           class="form-input-custom"
-                                           placeholder="Tus apellidos"
-                                           required>
+                                    <input type="text" id="apellidos" name="apellidos" class="form-input-custom"
+                                        placeholder="Tus apellidos" required>
                                 </div>
                             </div>
 
-                            <!-- Email -->
+
                             <label for="email" class="form-label-custom">📧 Correo Electrónico</label>
-                            <input type="email" id="email" name="email"
-                                   class="form-input-custom"
-                                   placeholder="tu@correo.com"
-                                   required>
+                            <input type="email" id="email" name="email" class="form-input-custom"
+                                placeholder="tu@correo.com" required>
 
-                            <!-- Teléfono -->
+
                             <label for="telefono" class="form-label-custom">📞 Teléfono (opcional)</label>
-                            <input type="tel" id="telefono" name="telefono"
-                                   class="form-input-custom"
-                                   placeholder="+34 600 000 000">
+                            <input type="tel" id="telefono" name="telefono" class="form-input-custom"
+                                placeholder="+34 600 000 000">
 
-                            <!-- Desplegable: Motivo -->
+
                             <label for="motivo" class="form-label-custom">🎯 Motivo de contacto</label>
                             <select id="motivo" name="motivo" class="form-input-custom" required>
                                 <option value="" disabled selected>-- Selecciona una opción --</option>
@@ -99,33 +93,30 @@
                                 <option value="otro">❓ Otro</option>
                             </select>
 
-                            <!-- Desplegable: Tipo de entrada -->
+
                             <label for="tipoEntrada" class="form-label-custom">🎫 Tipo de entrada</label>
                             <select id="tipoEntrada" name="tipoEntrada" class="form-input-custom">
                                 <option value="" disabled selected>-- Selecciona tipo --</option>
-                                <option value="general">General – 25€</option>
-                                <option value="vip">VIP – 75€</option>
-                                <option value="camping">Camping – 60€</option>
-                                <option value="familiar">Familiar (4 personas) – 80€</option>
-                                <option value="solidario">Solidario (donación extra) – 100€</option>
+                                <option value="general">General – 25 aura</option>
+                                <option value="vip">VIP – 75 aura</option>
+                                <option value="camping">Camping – 60 aura</option>
+                                <option value="familiar">Familiar (4 personas) – 80 aura</option>
+                                <option value="solidario">Solidario (donación extra) – 100 aura</option>
                             </select>
 
-                            <!-- Mensaje -->
-                            <label for="mensaje" class="form-label-custom">💬 Mensaje</label>
-                            <textarea id="mensaje" name="mensaje"
-                                      class="form-input-custom"
-                                      rows="4"
-                                      placeholder="Escribe tu mensaje aquí..."
-                                      style="resize: vertical;"
-                                      required></textarea>
 
-                            <!-- Checkbox política de privacidad -->
+                            <label for="mensaje" class="form-label-custom">💬 Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" class="form-input-custom" rows="4"
+                                placeholder="Escribe tu mensaje aquí..." style="resize: vertical;" required></textarea>
+
+
                             <label class="form-check-custom">
                                 <input type="checkbox" id="privacidad" name="privacidad" required>
-                                <span>He leído y acepto la <a href="#" style="color:#00eeff;">política de privacidad</a> y consiento el tratamiento de mis datos.</span>
+                                <span>He leído y acepto la <a href="#" style="color:#00eeff;">política de privacidad</a>
+                                    y consiento el tratamiento de mis datos.</span>
                             </label>
 
-                            <!-- Checkbox newsletter -->
+
                             <label class="form-check-custom">
                                 <input type="checkbox" id="newsletter" name="newsletter">
                                 <span>Quiero recibir novedades del Hipódromo Solidario y sus ONGs colaboradoras.</span>
@@ -134,38 +125,41 @@
                             <button type="submit" class="btn-enviar">Enviar mensaje 🚀</button>
                         </form>
 
-                        <!-- Mensaje de éxito -->
+
                         <div id="msg-exito">
-                            ✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto. ¡Gracias por tu apoyo solidario! 🐴❤️
+                            ✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto. ¡Gracias por tu apoyo
+                            solidario! 🐴❤️
                         </div>
                     </div>
                 </div>
 
-                <!-- INFO DE CONTACTO -->
+
                 <div class="col-lg-5">
                     <div class="info-contacto">
                         <div class="ic-titulo">📍 Información del Evento</div>
 
                         <p>🏟️ <strong style="color:#00eeff;">Lugar:</strong><br>
-                        Hipódromo de la Zarzuela, Madrid</p>
+                            Hipódromo de la Salle, Zaragoza</p>
 
                         <p>📅 <strong style="color:#00eeff;">Fechas:</strong><br>
-                        Viernes 23 – Domingo 25 de Mayo de 2025</p>
+                            Viernes 23 – Domingo 25 de Mayo de 2025</p>
 
                         <p>🕙 <strong style="color:#00eeff;">Horario:</strong><br>
-                        10:00h – 22:00h (puertas abren a las 9:00h)</p>
+                            10:00h – 22:00h (puertas abren a las 9:00h)</p>
 
                         <p>📧 <strong style="color:#00eeff;">Email:</strong><br>
-                        info@hipodromosolidario.es</p>
+                            info@WinstHorse.es</p>
 
                         <p>📞 <strong style="color:#00eeff;">Teléfono:</strong><br>
-                        +34 900 123 456</p>
+                            +34 622 60 83 89</p>
 
                         <p>🤝 <strong style="color:#00eeff;">Colaboraciones y prensa:</strong><br>
-                        prensa@hipodromosolidario.es</p>
+                            prensa@WinstHorse.es</p>
 
-                        <div style="margin-top:28px; padding:20px; background:rgba(229,255,0,0.07); border-radius:12px; border:1px solid rgba(229,255,0,0.2);">
-                            <p style="color:#e5ff00; font-weight:bold; margin-bottom:10px;">💰 ¿Cómo se reparte lo recaudado?</p>
+                        <div
+                            style="margin-top:28px; padding:20px; background:rgba(229,255,0,0.07); border-radius:12px; border:1px solid rgba(229,255,0,0.2);">
+                            <p style="color:#e5ff00; font-weight:bold; margin-bottom:10px;">💰 ¿Cómo se reparte lo
+                                recaudado?</p>
                             <p>• 40% → Médicos Sin Fronteras</p>
                             <p>• 25% → UNICEF</p>
                             <p>• 20% → Cruz Roja Internacional</p>
@@ -178,7 +172,7 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+
     <footer>
         <div class="footers">
             <p class="titulos">El Evento</p>
@@ -201,15 +195,15 @@
         </div>
         <div class="footers">
             <p class="titulos">Contacto</p>
-            <p>📧 info@hipodromosolidario.es</p>
-            <p>📞 +34 111 111 111</p>
+            <p>📧 info@WinstHorse.es</p>
+            <p>📞 +34 622 60 83 89</p>
             <a href="contacto.html" class="footer-link-ong">Formulario de contacto</a>
         </div>
     </footer>
 
     <script src="../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.getElementById('formularioContacto').addEventListener('submit', function(e) {
+        document.getElementById('formularioContacto').addEventListener('submit', function (e) {
             e.preventDefault();
             const privacidad = document.getElementById('privacidad').checked;
             if (!privacidad) {
@@ -222,4 +216,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -37,3 +37,7 @@ VALUES (4, "Edgar", 'Marron');
 -- CABALLO 5
 INSERT INTO caballos (id_caballo,nombre, color) 
 VALUES (5, "Sionne", 'Negro');
+
+-- Caballo 6
+Insert Into caballos (id_caballo,nombre, color) 
+VALUES (6, "Lucas", 'Amarillo');
