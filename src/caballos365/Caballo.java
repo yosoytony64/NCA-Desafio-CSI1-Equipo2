@@ -24,41 +24,41 @@ public class Caballo extends Thread {
 }
     
     public void run() {
-        int x = imagen.getX();
+       double xActual = imagen.getX();
     int y = imagen.getY();
-    int contadorPasos = 0;
-    int rachaVelocidad = (int) (Math.random() * 4) + 1; // Su velocidad inicial
+    
+    // Velocidad inicial base
+    double velocidadActual = 1.0; 
+    int contador = 0;
+    int duracionRacha = (int)(Math.random() * 100) + 50; // Cuánto tiempo mantendrá el ritmo
 
-    while (x < meta && !hayGanador) {
+    while (xActual < meta && !hayGanador) {
         try {
-            // 1. CADA 20 PASOS, EL CABALLO CAMBIA SU RITMO
-            if (contadorPasos % 30 == 0) {
-                // Puede ir lento (1) o pegar un sprint (hast 8)
-                rachaVelocidad = (int) (Math.random() * 3) + 1; 
+            // 1. CADA CIERTO TIEMPO (RACHA LARGA), EL CABALLO CAMBIA DE RITMO
+            if (contador >= duracionRacha) {
+                // Definimos una nueva velocidad para los próximos segundos
+                // Unos caballos irán a 0.5 (muy lentos) y otros a 2.8 (rápidos)
+                double nuevaVelocidad = (Math.random() * 2.3) + 0.5;
+                
+                // Actualizamos la duración de la próxima racha
+                duracionRacha = (int)(Math.random() * 100) + 50;
+                contador = 0;
+                
+                // Suavizamos el cambio de velocidad (para que no pegue tirón)
+                velocidadActual = (velocidadActual + nuevaVelocidad) / 2;
             }
 
-            // 2. APLICAMOS EL MOVIMIENTO
-            x += rachaVelocidad;
-            imagen.setLocation(x, y);
-            
-            contadorPasos++;
+            // 2. MOVIMIENTO CONSTANTE
+            xActual += velocidadActual;
+            imagen.setLocation((int) xActual, y);
 
-            // 3. PAUSA CORTA PARA MANTENER FLUIDEZ
-            Thread.sleep(15); 
+            contador++;
+            Thread.sleep(15); // Fluidez total
 
         } catch (InterruptedException e) {
             break;
         }
     }
-
-        // --- GESTIÓN DEL GANADOR ---
-        // Usamos 'synchronized' para asegurarnos de que solo uno gana
-        synchronized (Caballo.class) {
-            if (x >= meta && !hayGanador) {
-                hayGanador = true;
-                finalizarCarrera();
-            }
-        }
         
         
     }   

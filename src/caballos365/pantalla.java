@@ -73,20 +73,20 @@ Conexion con = new Conexion();
         });
         jDialog1.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 60));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/caballo6.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 260, -1, -1));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/AMARILLOBIEN-ezgif.com-resize.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/caballo-imagen-animada-0279.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 680, 190, 110));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/gifmoradobien-ezgif.com-resize.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 370, 110));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/caballo4.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 390, -1, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/AZULBIEN-ezgif.com-resize.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/caballo-imagen-animada-0240.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 870, -1, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/verdebien-ezgif.com-resize.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 840, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/caballo2.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 540, -1, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/ROJOBIEN-ezgif.com-resize.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/fondo_caballos_prueba.png"))); // NOI18N
         jLabel10.setText("jLabel10");

@@ -35,60 +35,60 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/GifsCaballos/caballo6.gif"/>
+              <Image iconType="3" name="/GifsCaballos/SPRITES CABALLOS/AMARILLOBIEN-ezgif.com-resize.gif"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="-10" y="260" width="-1" height="-1"/>
+              <AbsoluteConstraints x="0" y="230" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/GifsCaballos/caballo-imagen-animada-0279.gif"/>
+              <Image iconType="3" name="/GifsCaballos/SPRITES CABALLOS/gifmoradobien-ezgif.com-resize.gif"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="-30" y="680" width="190" height="110"/>
+              <AbsoluteConstraints x="0" y="670" width="370" height="110"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/GifsCaballos/caballo4.gif"/>
+              <Image iconType="3" name="/GifsCaballos/SPRITES CABALLOS/AZULBIEN-ezgif.com-resize.gif"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="-30" y="390" width="-1" height="-1"/>
+              <AbsoluteConstraints x="0" y="380" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/GifsCaballos/caballo-imagen-animada-0240.gif"/>
+              <Image iconType="3" name="/GifsCaballos/SPRITES CABALLOS/verdebien-ezgif.com-resize.gif"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="870" width="-1" height="-1"/>
+              <AbsoluteConstraints x="0" y="840" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/GifsCaballos/caballo2.gif"/>
+              <Image iconType="3" name="/GifsCaballos/SPRITES CABALLOS/ROJOBIEN-ezgif.com-resize.gif"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="-10" y="540" width="-1" height="-1"/>
+              <AbsoluteConstraints x="0" y="530" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
