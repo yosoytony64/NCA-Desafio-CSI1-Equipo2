@@ -38,6 +38,11 @@ Conexion con = new Conexion();
 
         jDialog1 = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jDialog2 = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         jDialog3 = new javax.swing.JDialog();
@@ -55,18 +60,37 @@ Conexion con = new Conexion();
         jLabel1 = new javax.swing.JLabel();
 
         jDialog1.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("USUAIOS");
-        jDialog1.getContentPane().add(jLabel2, java.awt.BorderLayout.CENTER);
+        jDialog1.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 617));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/caballo-imagen-animada-0063.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 150, 100));
+
+        jButton5.setText("empezar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jDialog1.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/caballo-imagen-animada-0262.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/caballo4.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/caballo5.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, 70));
 
         jDialog2.setMinimumSize(new java.awt.Dimension(1920, 1080));
 
         jLabel3.setText("ADMIN");
         jDialog2.getContentPane().add(jLabel3, java.awt.BorderLayout.CENTER);
 
-        jDialog3.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog3.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog3.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog3.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField3.setBackground(new java.awt.Color(74, 47, 29));
@@ -253,6 +277,29 @@ Conexion con = new Conexion();
         }// TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        // Definimos dónde está la meta (ej: coordenada X = 700)
+    int coordenadaMeta = 700; 
+    
+    // 1. Reiniciamos la variable de ganador (¡importante para rejugabilidad!)
+    // Necesitas un método estático en la clase Caballo para esto
+    // Caballo.reiniciarGanador(); 
+
+    // 2. Creamos los 5 objetos Caballo, pasándoles su GIF de la pantalla
+    // Asumimos que tus JLabels se llaman lblCaballo1, lblCaballo2, etc.
+    Caballo c1 = new Caballo("Rayo", jLabel5, coordenadaMeta);
+    Caballo c2 = new Caballo("Pepe", jLabel6, coordenadaMeta);
+    Caballo c3 = new Caballo("Joaquin", jLabel8, coordenadaMeta);
+    Caballo c4 = new Caballo("Raul", jLabel7, coordenadaMeta);
+
+    // 3. ¡LOS HACEMOS CORRER A LA VEZ!
+    c1.start();
+    c2.start();
+    c3.start();
+    c4.start();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -293,6 +340,7 @@ Conexion con = new Conexion();
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
@@ -300,6 +348,10 @@ Conexion con = new Conexion();
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
