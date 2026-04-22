@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ranking de las mejores ONGs colaboradoras del Hipódromo Solidario. Las organizaciones a las que va destinado lo recaudado.">
+    <title>Ranking de ONGs – Hipódromo Solidario</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/Carrera_Caballos.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header>
+        <nav class="navbar navbar-expand-lg w-100 p-0">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand mb-0" href="Pagina web de los caballos.html" id="brand-link">
+                    La Salle <span id="Beats">Beats</span>
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navMenu"
+                        aria-controls="navMenu"
+                        aria-expanded="false"
+                        aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon-custom">☰</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="nav-list-custom ms-auto">
+                        <li><a href="Pagina web de los caballos.html" class="nav-item-custom">🐴 Caballos</a></li>
+                        <li><a href="nosotros.html" class="nav-item-custom">👥 Sobre Nosotros</a></li>
+                        <li><a href="ongs_ranking.html" class="nav-item-custom active-link">🏆 ONGs asociadas</a></li>
+                        <li><a href="contacto.html" class="nav-item-custom">✉️ Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="subpage-hero">
+        <h1>🏆 Ranking de las Mejores ONGs</h1>
+        <div class="subpage-divider"></div>
+        <p>Estas son las organizaciones a las que va destinado el dinero recaudado en el Hipódromo Solidario. Evaluadas por impacto, transparencia y alcance global.</p>
+    </section>
+
+    <!-- ===== TABLA ===== -->
+    <section class="tabla-seccion">
+        <div class="container">
+
+            <!-- Buscador + filtro -->
+            <div class="row g-3 mb-4 align-items-center">
+                <div class="col-md-5">
+                    <input type="text" id="buscarOng" class="buscador-ong" placeholder="🔍 Buscar ONG por nombre o área...">
+                </div>
+                <div class="col-md-4">
+                    <select id="filtroArea" class="select-area">
+                        <option value="">🗂️ Todas las áreas</option>
+                        <option value="salud">🏥 Salud</option>
+                        <option value="humanitaria">❤️ Humanitaria</option>
+                        <option value="medio ambiente">🌱 Medio Ambiente</option>
+                        <option value="infancia">👶 Infancia</option>
+                        <option value="derechos">⚖️ Derechos Humanos</option>
+                        <option value="alimentación">🍽️ Alimentación</option>
+                        <option value="vivienda">🏠 Vivienda</option>
+                        <option value="agua">💧 Agua</option>
+                    </select>
+                </div>
+                <div class="col-md-3 text-md-end">
+                    <span class="contador-badge" id="contadorOng">15 ONGs</span>
+                </div>
+            </div>
+
+            <!-- Tabla principal -->
+            <div class="tabla-contenedor">
+                <div class="table-responsive">
+                    <table class="tabla-ongs" id="tablaOngs">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre ONG</th>
+                                <th>País</th>
+                                <th>Fundación</th>
+                                <th>Área</th>
+                                <th>Presupuesto (M€)</th>
+                                <th>Países</th>
+                                <th>Voluntarios</th>
+                                <th>Valoración</th>
+                                <th>Web</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTabla">
+                            <tr>
+                                <td><span class="rank-badge rank-1">1</span></td>
+                                <td><strong>Médicos Sin Fronteras</strong></td>
+                                <td>🇫🇷 Francia</td>
+                                <td>1971</td>
+                                <td><span class="badge-area badge-salud">Salud</span></td>
+                                <td>2.400</td>
+                                <td>70+</td>
+                                <td>46.000</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.msf.es" target="_blank" class="ong-link">msf.es</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-2">2</span></td>
+                                <td><strong>Cruz Roja Internacional</strong></td>
+                                <td>🇨🇭 Suiza</td>
+                                <td>1863</td>
+                                <td><span class="badge-area badge-humanitaria">Humanitaria</span></td>
+                                <td>2.100</td>
+                                <td>192</td>
+                                <td>97M</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.icrc.org" target="_blank" class="ong-link">icrc.org</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-3">3</span></td>
+                                <td><strong>UNICEF</strong></td>
+                                <td>🇺🇸 EE.UU.</td>
+                                <td>1946</td>
+                                <td><span class="badge-area badge-infancia">Infancia</span></td>
+                                <td>7.200</td>
+                                <td>190</td>
+                                <td>13.000</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.unicef.es" target="_blank" class="ong-link">unicef.es</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">4</span></td>
+                                <td><strong>Greenpeace</strong></td>
+                                <td>🇨🇦 Canadá</td>
+                                <td>1971</td>
+                                <td><span class="badge-area badge-medioambiente">Medio Ambiente</span></td>
+                                <td>382</td>
+                                <td>55</td>
+                                <td>3M</td>
+                                <td><span class="stars">★★★★☆</span></td>
+                                <td><a href="https://www.greenpeace.org/spain" target="_blank" class="ong-link">greenpeace.org</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">5</span></td>
+                                <td><strong>Amnistía Internacional</strong></td>
+                                <td>🇬🇧 Reino Unido</td>
+                                <td>1961</td>
+                                <td><span class="badge-area badge-derechos">Derechos Humanos</span></td>
+                                <td>385</td>
+                                <td>70+</td>
+                                <td>10M</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.es.amnesty.org" target="_blank" class="ong-link">amnesty.org</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">6</span></td>
+                                <td><strong>Oxfam Internacional</strong></td>
+                                <td>🇬🇧 Reino Unido</td>
+                                <td>1942</td>
+                                <td><span class="badge-area badge-humanitaria">Humanitaria</span></td>
+                                <td>1.100</td>
+                                <td>90</td>
+                                <td>50.000</td>
+                                <td><span class="stars">★★★★☆</span></td>
+                                <td><a href="https://www.oxfamintermon.org" target="_blank" class="ong-link">oxfam.org</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">7</span></td>
+                                <td><strong>Save the Children</strong></td>
+                                <td>🇬🇧 Reino Unido</td>
+                                <td>1919</td>
+                                <td><span class="badge-area badge-infancia">Infancia</span></td>
+                                <td>2.800</td>
+                                <td>120</td>
+                                <td>25.000</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.savethechildren.es" target="_blank" class="ong-link">savethechildren.es</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">8</span></td>
+                                <td><strong>WWF</strong></td>
+                                <td>🇨🇭 Suiza</td>
+                                <td>1961</td>
+                                <td><span class="badge-area badge-medioambiente">Medio Ambiente</span></td>
+                                <td>900</td>
+                                <td>100+</td>
+                                <td>5M</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.wwf.es" target="_blank" class="ong-link">wwf.es</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">9</span></td>
+                                <td><strong>Cáritas Internationalis</strong></td>
+                                <td>🇻🇦 Vaticano</td>
+                                <td>1950</td>
+                                <td><span class="badge-area badge-humanitaria">Humanitaria</span></td>
+                                <td>6.000</td>
+                                <td>160</td>
+                                <td>1M</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.caritas.es" target="_blank" class="ong-link">caritas.es</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">10</span></td>
+                                <td><strong>Acción contra el Hambre</strong></td>
+                                <td>🇫🇷 Francia</td>
+                                <td>1979</td>
+                                <td><span class="badge-area badge-alimentacion">Alimentación</span></td>
+                                <td>560</td>
+                                <td>50</td>
+                                <td>9.000</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.accioncontraelhambre.org" target="_blank" class="ong-link">accioncontraelhambre.org</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">11</span></td>
+                                <td><strong>Habitat for Humanity</strong></td>
+                                <td>🇺🇸 EE.UU.</td>
+                                <td>1976</td>
+                                <td><span class="badge-area badge-vivienda">Vivienda</span></td>
+                                <td>530</td>
+                                <td>70</td>
+                                <td>1M</td>
+                                <td><span class="stars">★★★★☆</span></td>
+                                <td><a href="https://www.habitat.org" target="_blank" class="ong-link">habitat.org</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">12</span></td>
+                                <td><strong>Plan International</strong></td>
+                                <td>🇬🇧 Reino Unido</td>
+                                <td>1937</td>
+                                <td><span class="badge-area badge-infancia">Infancia</span></td>
+                                <td>1.100</td>
+                                <td>75</td>
+                                <td>21.000</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.planspain.org" target="_blank" class="ong-link">planspain.org</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">13</span></td>
+                                <td><strong>Water.org</strong></td>
+                                <td>🇺🇸 EE.UU.</td>
+                                <td>2009</td>
+                                <td><span class="badge-area badge-agua">Agua</span></td>
+                                <td>150</td>
+                                <td>13</td>
+                                <td>1.200</td>
+                                <td><span class="stars">★★★★☆</span></td>
+                                <td><a href="https://www.water.org" target="_blank" class="ong-link">water.org</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">14</span></td>
+                                <td><strong>CARE Internacional</strong></td>
+                                <td>🇺🇸 EE.UU.</td>
+                                <td>1945</td>
+                                <td><span class="badge-area badge-humanitaria">Humanitaria</span></td>
+                                <td>800</td>
+                                <td>100</td>
+                                <td>10.000</td>
+                                <td><span class="stars">★★★★☆</span></td>
+                                <td><a href="https://www.care.org" target="_blank" class="ong-link">care.org</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">15</span></td>
+                                <td><strong>Banco de Alimentos</strong></td>
+                                <td>🇪🇸 España</td>
+                                <td>1987</td>
+                                <td><span class="badge-area badge-alimentacion">Alimentación</span></td>
+                                <td>300</td>
+                                <td>26</td>
+                                <td>80.000</td>
+                                <td><span class="stars">★★★★★</span></td>
+                                <td><a href="https://www.bancoalimentos.org" target="_blank" class="ong-link">bancoalimentos.org</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p style="color:rgba(255,255,255,0.4); font-size:0.82rem; text-align:center; margin-top:20px;">
+                📊 Datos basados en informes anuales públicos. Presupuesto en millones de euros. Actualizado 2024.
+            </p>
+        </div>
+    </section>
+
+    <!-- Leyenda de áreas -->
+    <section class="leyenda-seccion">
+        <div class="container">
+            <p class="seccion-titulo" style="font-size:1.3rem; margin-bottom:20px;">Leyenda de Áreas</p>
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <span class="badge-area badge-salud">🏥 Salud</span>
+                <span class="badge-area badge-humanitaria">❤️ Humanitaria</span>
+                <span class="badge-area badge-medioambiente">🌱 Medio Ambiente</span>
+                <span class="badge-area badge-infancia">👶 Infancia</span>
+                <span class="badge-area badge-derechos">⚖️ Derechos Humanos</span>
+                <span class="badge-area badge-alimentacion">🍽️ Alimentación</span>
+                <span class="badge-area badge-vivienda">🏠 Vivienda</span>
+                <span class="badge-area badge-agua">💧 Agua</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footers">
+            <p class="titulos">El Evento</p>
+            <p>Caballos</p>
+            <p>Agenda</p>
+            <p>Galería</p>
+        </div>
+        <div class="footers">
+            <p class="titulos">Entradas</p>
+            <p>General</p>
+            <p>VIP</p>
+            <p>Camping</p>
+        </div>
+        <div class="footers">
+            <p class="titulos">ONGs Colaboradoras</p>
+            <a href="ongs_ranking.html" class="footer-link-ong">🏆 Ver Ranking</a>
+            <p>Médicos Sin Fronteras</p>
+            <p>UNICEF</p>
+            <p>Cruz Roja</p>
+        </div>
+        <div class="footers">
+            <p class="titulos">Contacto</p>
+            <p>📧 info@hipodromosolidario.es</p>
+            <p>📞 +34 111 111 111</p>
+            <a href="contacto.html" class="footer-link-ong">Formulario de contacto</a>
+        </div>
+    </footer>
+
+    <script src="../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const inputBuscar = document.getElementById('buscarOng');
+        const selectArea  = document.getElementById('filtroArea');
+        const filas       = document.querySelectorAll('#cuerpoTabla tr');
+        const contador    = document.getElementById('contadorOng');
+
+        function filtrar() {
+            const texto = inputBuscar.value.toLowerCase();
+            const area  = selectArea.value.toLowerCase();
+            let n = 0;
+            filas.forEach(fila => {
+                const nombre    = fila.cells[1].textContent.toLowerCase();
+                const areaCelda = fila.cells[4].textContent.toLowerCase();
+                const okTexto = nombre.includes(texto) || areaCelda.includes(texto);
+                const okArea  = area === '' || areaCelda.includes(area);
+                fila.style.display = (okTexto && okArea) ? '' : 'none';
+                if (okTexto && okArea) n++;
+            });
+            contador.textContent = n + ' ONGs';
+        }
+
+        inputBuscar.addEventListener('input', filtrar);
+        selectArea.addEventListener('change', filtrar);
+    </script>
+</body>
+</html>
