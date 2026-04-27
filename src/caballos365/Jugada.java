@@ -14,7 +14,32 @@ public class Jugada {
     private Carrera IDcarrera;
     private double monto;
     private String estado;
+    private int idCaballoElegido;
+    private double cantidadApostada;
 
-    public Jugada() {
+    public Jugada(int idCaballoElegido, double cantidadApostada) {
+        this.idCaballoElegido = idCaballoElegido;
+        this.cantidadApostada = cantidadApostada;
+    }
+
+    public int getIdCaballoElegido() {
+        return idCaballoElegido;
+    }
+
+    public void setIdCaballoElegido(int idCaballoElegido) {
+        this.idCaballoElegido = idCaballoElegido;
+    }
+
+    public double getCantidadApostada() {
+        return cantidadApostada;
+    }
+
+    public void setCantidadApostada(double cantidadApostada) {
+        this.cantidadApostada = cantidadApostada;
+    }
+
+    // Método para calcular el premio
+    public double calcularPremio() {
+        return cantidadApostada * 2;
     }
 }
