@@ -54,6 +54,13 @@ Conexion con = new Conexion();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jDialog4 = new javax.swing.JDialog();
+        jButton6 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jDialog5 = new javax.swing.JDialog();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jTextField1 = new javax.swing.JTextField();
@@ -153,9 +160,50 @@ Conexion con = new Conexion();
         jLabel4.setText("jLabel4");
         jDialog3.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1880, -1));
 
+        jDialog4.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        jDialog4.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        jDialog4.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jDialog4.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jDialog4.getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 630, 140));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/MenuPrincipal1920 (1).png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jDialog4.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 1090));
+
+        jDialog5.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        jDialog5.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        jDialog5.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jDialog5.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        jDialog5.getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(757, 546, 250, 60));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Aura.jpg"))); // NOI18N
+        jDialog5.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 551, -1, 50));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/ImagenInscripcionCarrera.png"))); // NOI18N
+        jLabel12.setText("jLabel12");
+        jLabel12.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        jLabel12.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        jLabel12.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jDialog5.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2010, 1080));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBorderPainted(false);
@@ -211,7 +259,7 @@ Conexion con = new Conexion();
                 if (rs.next()) {
                     String nivel_acceso=rs.getString("nivel_acceso");
                     if (nivel_acceso.equalsIgnoreCase("Usuario")) {
-                        jDialog1.setVisible(true);
+                        jDialog4.setVisible(true);
                         pantalla obj_pantalla = new pantalla();
         obj_pantalla.setVisible(false);
                         
@@ -312,6 +360,21 @@ Conexion con = new Conexion();
     c5.start();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        
+   
+    
+    // 4. Mostrar el nuevo diálogo
+    jDialog4.setVisible(false);
+    jDialog5.setVisible(true);
+    
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -353,11 +416,17 @@ Conexion con = new Conexion();
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
+    private javax.swing.JDialog jDialog4;
+    private javax.swing.JDialog jDialog5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -371,6 +440,7 @@ Conexion con = new Conexion();
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 
 void limpiar(){
