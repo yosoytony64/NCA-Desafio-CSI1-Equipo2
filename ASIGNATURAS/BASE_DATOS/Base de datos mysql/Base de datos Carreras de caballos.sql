@@ -119,6 +119,7 @@ CREATE TABLE Donaciones (
     id_usuario INT,
     id_apuesta INT,
     monto_donado DECIMAL(10,2) NOT NULL, 
+    Ong_destinada varchar(100) not null,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_apuesta) REFERENCES Apuestas(id_apuesta) ON DELETE CASCADE
@@ -130,6 +131,7 @@ CREATE TABLE Donaciones (
 select * from administradores;
 SELECT * FROM Usuarios;
 select * from caballos;
+select* from Apuestas;
 
 ALTER TABLE Usuarios
 ADD COLUMN nivel_acceso INT NOT NULL DEFAULT 1;
@@ -162,11 +164,13 @@ ADD COLUMN nivel_acceso ENUM('Usuario', 'Administrador', 'SuperAdmin') NOT NULL;
 
 ALTER TABLE Administradores DROP COLUMN nivel_acceso;
 
-ALTER TABLE Apuestas DROP FOREIGN KEY apuestas_ibfk_1;
+ALTER TABLE jugadas DROP FOREIGN KEY apuestas_ibfk_1;
 
-ALTER TABLE Apuestas 
+ALTER TABLE Jugadas 
 ADD CONSTRAINT fk_apuestas_usuario
 FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
 ON DELETE CASCADE;
 
 DELETE FROM caballos WHERE id_caballo = 5;
+
+ALTER TABLE Apuestas RENAME TO Jugadas;

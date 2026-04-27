@@ -41,3 +41,5 @@ VALUES (5, "Sionne", 'Negro');
 -- Caballo 6
 Insert Into caballos (id_caballo,nombre, color) 
 VALUES (6, "Lucas", 'Amarillo');
+
+
