@@ -12,8 +12,9 @@ CREATE TABLE Usuarios (
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     contraseña VARCHAR(255) NOT NULL,
-    edad int not null
-   
+    edad int not null,
+	saldo DECIMAL(10,2) DEFAULT 0 CHECK (saldo >= 500)
+
 );
 -- TABLA 2 CLIENTES(HERENCIA DE USUARIOS)
 -- Especialización de Usuarios. Relación 1:1.
@@ -23,7 +24,6 @@ CREATE TABLE Usuarios (
 -- RELACIÓN: Si borras el usuario, el registro de cliente se elimina (CASCADE).
 create table Clientes(
 	id_usuario INT PRIMARY KEY,
-	saldo DECIMAL(10,2) DEFAULT 0 CHECK (saldo >= 500),
 	FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
 	ON DELETE CASCADE ON UPDATE CASCADE
 );
