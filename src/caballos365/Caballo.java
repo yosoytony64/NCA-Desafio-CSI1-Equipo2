@@ -5,6 +5,7 @@
 package caballos365;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,7 +25,7 @@ public class Caballo extends Thread {
 }
     
     public void run() {
-       double xActual = imagen.getX();
+    double xActual = imagen.getX();
     int y = imagen.getY();
     
     // Velocidad inicial base
@@ -36,15 +37,15 @@ public class Caballo extends Thread {
         try {
             // 1. CADA CIERTO TIEMPO (RACHA LARGA), EL CABALLO CAMBIA DE RITMO
             if (contador >= duracionRacha) {
-                // Definimos una nueva velocidad para los próximos segundos
-                // Unos caballos irán a 0.5 (muy lentos) y otros a 2.8 (rápidos)
+                // nueva velocidad para los próximos segundos
+                // Unos caballos irán a 0.5 (muy lentos) y otros a 2.3 (rápidos)
                 double nuevaVelocidad = (Math.random() * 2.3) + 0.5;
                 
                 // Actualizamos la duración de la próxima racha
                 duracionRacha = (int)(Math.random() * 100) + 50;
                 contador = 0;
                 
-                // Suavizamos el cambio de velocidad (para que no pegue tirón)
+                // Suavizamos el cambio de velocidad, asi no pegara tiro)
                 velocidadActual = (velocidadActual + nuevaVelocidad) / 2;
             }
 
@@ -59,13 +60,41 @@ public class Caballo extends Thread {
             break;
         }
     }
+        if (xActual >= meta && !hayGanador) {
+        hayGanador = true; // Bloqueamos a los demás hilos
         
-        
-    }   
-
-    private void finalizarCarrera() {
-        // Esto detendrá a los demás hilos y mostrará el mensaje
-    javax.swing.JOptionPane.showMessageDialog(null, "¡Ha ganado el caballo: " + this.nombre + "!");
+        // Llamamos a una función para repartir premios
+        finalizarCarrera(this.nombre); 
     }
+    }   
+    
+    
+    
+    private void finalizarCarrera(String ganador) {
+    // Comprobamos si el usuario apostó por este caballo
+    
+    if (ganador.equalsIgnoreCase(pantalla.caballoApostado)) {
+        double premio = pantalla.montoApuesta * pantalla.multiplicador;
+        pantalla.saldoApp += premio;
+        
+        JOptionPane.showMessageDialog(null, "¡GANASTE! El caballo " + ganador + " llegó primero.\n"
+                + "Premio: " + premio + " Auras.");
+    } else {
+        JOptionPane.showMessageDialog(null, "Ha ganado el caballo " + ganador + ".\n"
+                + "Has perdido la carrera.");
+        // El saldo se resta al momento de darle a "Correr"
+    }
+
+    // Actualizamos la base de datos inmediatamente
+    actualizarSaldoBD db = new actualizarSaldoBD(); 
+    db.actualizarSaldo(pantalla.usuarioIdentificado, pantalla.saldoApp);
+    
+    // Resetear para la siguiente carrera
+    hayGanador = false; 
 }
+    
+}
+
+
+
 

@@ -19,10 +19,11 @@ import java.sql.ResultSet;
  */
 public class pantalla extends javax.swing.JFrame {
 Conexion con = new Conexion();
-    /**
-     * Creates new form pantalla
-     */
+public static String usuarioIdentificado; // Se llenará al hacer Login
 public static double saldoApp = 0.0;
+public static String caballoApostado = ""; 
+public static double montoApuesta = 0.0;
+public static int multiplicador = 2; 
 
     public pantalla() {
         initComponents();
@@ -62,15 +63,25 @@ public static double saldoApp = 0.0;
         jLabel2 = new javax.swing.JLabel();
         jDialog5 = new javax.swing.JDialog();
         jTextField6 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jDialog6 = new javax.swing.JDialog();
-        jLabel4 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
         jButton9 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jButton12 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
         jButton10 = new javax.swing.JButton();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jTextField1 = new javax.swing.JTextField();
@@ -204,8 +215,24 @@ public static double saldoApp = 0.0;
         });
         jDialog5.getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(757, 546, 250, 60));
 
+        jLabel20.setText("jLabel20");
+        jDialog5.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 370, -1, -1));
+
+        jLabel21.setText("jLabel21");
+        jDialog5.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 360, -1, -1));
+
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Aura.jpg"))); // NOI18N
         jDialog5.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 551, -1, 50));
+
+        jLabel19.setText("jLabel19");
+        jDialog5.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 370, -1, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/caballoamarillocap.png"))); // NOI18N
+        jDialog5.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, -1, -1));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/caballoazulcap.png"))); // NOI18N
+        jLabel17.setText("jLabel17");
+        jDialog5.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 210, -1));
 
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -223,36 +250,74 @@ public static double saldoApp = 0.0;
         jLabel12.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog5.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2010, 1080));
 
+        jDialog6.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        jDialog6.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        jDialog6.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog6.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setText("Saldo:");
-        jDialog6.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, -1));
-
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("0");
-        jDialog6.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
+        jDialog6.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 780, 50));
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-        jDialog6.getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 260, -1));
-
-        jButton9.setText("CONFIRMAR RECARGA");
+        jButton9.setText(" ");
+        jButton9.setBorderPainted(false);
+        jButton9.setContentAreaFilled(false);
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
-        jDialog6.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
+        jDialog6.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 570, 90));
 
-        jButton10.setText("ACTUALIZAR SALDO");
+        jButton11.setBorderPainted(false);
+        jButton11.setContentAreaFilled(false);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jDialog6.getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 910, 830, 90));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Aura (1).jpg"))); // NOI18N
+        jDialog6.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 100, 90));
+
+        jButton12.setBorderPainted(false);
+        jButton12.setContentAreaFilled(false);
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jDialog6.getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1235, 497, 590, 100));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Aura (1).jpg"))); // NOI18N
+        jDialog6.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 370, 100, 90));
+
+        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField7.setFont(new java.awt.Font("Palatino Linotype", 0, 24)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(204, 153, 0));
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        jDialog6.getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 590, 90));
+
+        jButton10.setBorderPainted(false);
+        jButton10.setContentAreaFilled(false);
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
             }
         });
-        jDialog6.getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 160, -1));
+        jDialog6.getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 680, 570, 80));
+        jDialog6.getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1237, 376, 580, 90));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/MenuSaldoBueno.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jDialog6.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
@@ -305,39 +370,74 @@ public static double saldoApp = 0.0;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    String usuario = jTextField1.getText();
-    String pass = jPasswordField1.getText();
+//    String usuario = jTextField1.getText();
+//    String pass = jPasswordField1.getText();
+//    
+//        if (!usuario.equals("") || !pass.equals("")) {
+//            try{
+//                Connection conexionReal = Conexion.conectar();
+//                java.sql.PreparedStatement ps = conexionReal.prepareStatement("SELECT nivel_acceso FROM usuarios WHERE (nombre = '"+usuario+"' OR email = '"+usuario+"') and contraseña = '"+pass+"'");
+//                ResultSet rs=ps.executeQuery(); 
+//                if (rs.next()) {
+//                    String nivel_acceso=rs.getString("nivel_acceso");
+//                    if (nivel_acceso.equalsIgnoreCase("Usuario")) {
+//                        jDialog4.setVisible(true);
+//                        pantalla obj_pantalla = new pantalla();
+//        obj_pantalla.setVisible(false);
+//                        
+//                    }
+//                    if (nivel_acceso.equalsIgnoreCase("Administrador")) {
+//                        jDialog2.setVisible(true);
+//                        pantalla obj_pantalla = new pantalla();
+//        obj_pantalla.setVisible(false);
+//                        
+//                    }
+//                    
+//                }else{
+//                    JOptionPane.showMessageDialog(null, "Usuario o Contaseña incorrectos");
+//                }
+//            }catch(Exception e){
+//                JOptionPane.showMessageDialog(null, "No se puede iniciar sesión");
+//                
+//            }
+//        }else{
+//            JOptionPane.showMessageDialog(null, "Introduzca Los Datos");
+//        }
+    String usuarioInput = jTextField1.getText();
+    String passInput = jPasswordField1.getText();
     
-        if (!usuario.equals("") || !pass.equals("")) {
-            try{
-                Connection conexionReal = Conexion.conectar();
-                java.sql.PreparedStatement ps = conexionReal.prepareStatement("SELECT nivel_acceso FROM usuarios WHERE (nombre = '"+usuario+"' OR email = '"+usuario+"') and contraseña = '"+pass+"'");
-                ResultSet rs=ps.executeQuery(); 
-                if (rs.next()) {
-                    String nivel_acceso=rs.getString("nivel_acceso");
-                    if (nivel_acceso.equalsIgnoreCase("Usuario")) {
-                        jDialog4.setVisible(true);
-                        pantalla obj_pantalla = new pantalla();
-        obj_pantalla.setVisible(false);
-                        
-                    }
-                    if (nivel_acceso.equalsIgnoreCase("Administrador")) {
-                        jDialog2.setVisible(true);
-                        pantalla obj_pantalla = new pantalla();
-        obj_pantalla.setVisible(false);
-                        
-                    }
-                    
-                }else{
-                    JOptionPane.showMessageDialog(null, "Usuario o Contaseña incorrectos");
-                }
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "No se puede iniciar sesión");
+    if (!usuarioInput.equals("") && !passInput.equals("")) {
+        try {
+            Connection conexionReal = Conexion.conectar();
+            
+            // Consulta directa a una sola tabla
+            String sql = "SELECT saldo, nombre FROM Usuarios WHERE (nombre = ? OR email = ?) AND contraseña = ?";
+            
+            java.sql.PreparedStatement ps = conexionReal.prepareStatement(sql);
+            ps.setString(1, usuarioInput);
+            ps.setString(2, usuarioInput);
+            ps.setString(3, passInput);
+            
+            ResultSet rs = ps.executeQuery(); 
+            
+            if (rs.next()) {
+                // Guardamos el saldo y el nombre del usuario logueado
+                pantalla.saldoApp = rs.getDouble("saldo"); 
+                pantalla.usuarioIdentificado = rs.getString("nombre"); 
                 
+                // Abrimos el menú principal
+                jDialog4.setVisible(true);
+                this.setVisible(false); 
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrectos");
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Introduzca Los Datos");
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al iniciar sesión: " + e.getMessage());
         }
+    } else {
+        JOptionPane.showMessageDialog(null, "Por favor, rellena todos los campos");
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -394,22 +494,20 @@ public static double saldoApp = 0.0;
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        // Definimos dónde está la meta (ej: coordenada X = 700)
+        // Definimos dónde está la meta 
     int coordenadaMeta = 1800; 
     
-    // 1. Reiniciamos la variable de ganador (¡importante para rejugabilidad!)
-    // Necesitas un método estático en la clase Caballo para esto
-    // Caballo.reiniciarGanador(); 
-
-    // 2. Creamos los 5 objetos Caballo, pasándoles su GIF de la pantalla
-    // Asumimos que tus JLabels se llaman lblCaballo1, lblCaballo2, etc.
+    // 1. Reiniciamos la variable de ganador 
+    
+    // 2. Creamos los 5 objetos Caballo
+   
     Caballo c1 = new Caballo("Rayo", jLabel5, coordenadaMeta);
     Caballo c2 = new Caballo("Pepe", jLabel6, coordenadaMeta);
     Caballo c3 = new Caballo("Joaquin", jLabel8, coordenadaMeta);
     Caballo c4 = new Caballo("Raul", jLabel7, coordenadaMeta);
     Caballo c5 = new Caballo("Raul", jLabel9, coordenadaMeta);
 
-    // 3. ¡LOS HACEMOS CORRER A LA VEZ!
+   
     c1.start();
     c2.start();
     c3.start();
@@ -419,9 +517,7 @@ public static double saldoApp = 0.0;
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        
-   
-    
+      
     // 4. Mostrar el nuevo diálogo
     jDialog4.setVisible(false);
     jDialog5.setVisible(true);
@@ -446,6 +542,8 @@ public static double saldoApp = 0.0;
         // TODO add your handling code here:
         jDialog4.setVisible(false);
         jDialog6.setVisible(true);
+        jLabel14.setText(String.valueOf(pantalla.saldoApp)); // Muestra el saldo actual al abrir
+        jDialog6.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
@@ -456,18 +554,21 @@ public static double saldoApp = 0.0;
     jLabel14.setText(String.valueOf(this.saldoApp) + " Auras");
 }
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       try {
-        double cantidad = Double.parseDouble(jTextField7.getText());
-        if (cantidad > 0) {
-            // Sumamos a la variable global de la clase pantalla
-            caballos365.pantalla.saldoApp += cantidad; 
-            
-            JOptionPane.showMessageDialog(this, "¡Saldo procesado! Ahora pulsa 'Actualizar'.");
-            // Deshabilitamos el botón para evitar que le dé dos veces seguidas por error
-            jButton9.setEnabled(false); 
-        }
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Introduce un número válido.");
+      
+    try {
+        double monto = Double.parseDouble(jTextField7.getText());
+        
+        // 1. Sumamos a la variable de la app
+        pantalla.saldoApp += monto;
+        
+        // 2. Guardar en la Base de Datos
+       actualizarSaldoBD db = new actualizarSaldoBD();
+        db.actualizarSaldo(pantalla.usuarioIdentificado, pantalla.saldoApp);
+        
+        JOptionPane.showMessageDialog(this, "Recarga de " + monto + " Auras completada.");
+        jTextField7.setText(""); // Limpiamos el campo
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error: Introduce un número válido.");
     }
         
         
@@ -475,12 +576,50 @@ public static double saldoApp = 0.0;
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        jLabel14.setText("Saldo Actual: " + caballos365.pantalla.saldoApp + " Auras");
+        jLabel14.setText(caballos365.pantalla.saldoApp + " Auras");
     
-    // También podemos habilitar de nuevo el botón confirmar si quiere recargar más
+    
     jButton9.setEnabled(true);
     jTextField7.setText(""); // Limpiamos el cuadro de texto
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        jDialog4.setVisible(true);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        try {
+        // 1. Obtener la cantidad que el usuario quiere donar
+        
+        double montoDonado = Double.parseDouble(jTextField8.getText()); 
+
+        // 2. Verificar si tiene saldo suficiente para donar
+        if (montoDonado > pantalla.saldoApp) {
+            JOptionPane.showMessageDialog(this, "No tienes suficientes Auras para realizar esta donación.");
+        } else if (montoDonado <= 0) {
+            JOptionPane.showMessageDialog(this, "Por favor, introduce un monto válido mayor a 0.");
+        } else {
+            // 3. RESTAR el monto del saldo actual
+            pantalla.saldoApp -= montoDonado;
+
+            // 4. Actualizar la Base de Datos 
+            actualizarSaldoBD db = new actualizarSaldoBD();
+            db.actualizarSaldo(pantalla.usuarioIdentificado, pantalla.saldoApp);
+
+            // 5. Mostrar el mensaje
+            JOptionPane.showMessageDialog(this, "¡Gracias! ¡Tus " + montoDonado + " Auras han sido donadas!");
+            
+            // 6. Limpiar el campo y actualizar el label del saldo visualmente
+            jTextField8.setText("");
+            jLabel14.setText(String.valueOf(pantalla.saldoApp)); 
+        }
+        
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Error: Introduce un número válido para donar.");
+    }
+    }//GEN-LAST:event_jButton12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -520,6 +659,8 @@ public static double saldoApp = 0.0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -540,7 +681,14 @@ public static double saldoApp = 0.0;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -556,6 +704,7 @@ public static double saldoApp = 0.0;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 
 void limpiar(){
