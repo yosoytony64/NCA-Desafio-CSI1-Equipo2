@@ -13,7 +13,7 @@ CREATE TABLE Usuarios (
     email VARCHAR(100) UNIQUE NOT NULL,
     contraseña VARCHAR(255) NOT NULL,
     edad int not null,
-	saldo DECIMAL(10,2) DEFAULT 0 CHECK (saldo >= 500)
+	saldo DECIMAL(10,2) DEFAULT 500.0 CHECK (saldo >= 500)
 
 );
 -- TABLA 2 CLIENTES(HERENCIA DE USUARIOS)
