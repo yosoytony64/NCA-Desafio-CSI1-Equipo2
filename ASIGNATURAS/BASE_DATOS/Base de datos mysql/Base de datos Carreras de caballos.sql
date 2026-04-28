@@ -15,19 +15,15 @@ CREATE TABLE Usuarios (
     edad int not null
    
 );
-
-
-
 -- TABLA 2 CLIENTES(HERENCIA DE USUARIOS)
 -- Especialización de Usuarios. Relación 1:1.
 -- El id_usuario es PK y FK a la vez.
 -- PK: Identificador único del cliente. 
 -- FK: Conecta con Usuarios.id_usuario para obtener sus datos personales.
 -- RELACIÓN: Si borras el usuario, el registro de cliente se elimina (CASCADE).
-
 create table Clientes(
 	id_usuario INT PRIMARY KEY,
-	saldo DECIMAL(10,2) DEFAULT 0 CHECK (saldo >= 0),
+	saldo DECIMAL(10,2) DEFAULT 0 CHECK (saldo >= 500),
 	FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
 	ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -119,7 +115,6 @@ CREATE TABLE Donaciones (
     id_usuario INT,
     id_apuesta INT,
     monto_donado DECIMAL(10,2) NOT NULL, 
-    Ong_destinada varchar(100) not null,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_apuesta) REFERENCES Apuestas(id_apuesta) ON DELETE CASCADE
@@ -131,7 +126,6 @@ CREATE TABLE Donaciones (
 select * from administradores;
 SELECT * FROM Usuarios;
 select * from caballos;
-select* from Apuestas;
 
 ALTER TABLE Usuarios
 ADD COLUMN nivel_acceso INT NOT NULL DEFAULT 1;
@@ -164,13 +158,15 @@ ADD COLUMN nivel_acceso ENUM('Usuario', 'Administrador', 'SuperAdmin') NOT NULL;
 
 ALTER TABLE Administradores DROP COLUMN nivel_acceso;
 
-ALTER TABLE jugadas DROP FOREIGN KEY apuestas_ibfk_1;
+ALTER TABLE Apuestas DROP FOREIGN KEY apuestas_ibfk_1;
 
-ALTER TABLE Jugadas 
+ALTER TABLE Apuestas 
 ADD CONSTRAINT fk_apuestas_usuario
 FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
 ON DELETE CASCADE;
 
 DELETE FROM caballos WHERE id_caballo = 5;
-
-ALTER TABLE Apuestas RENAME TO Jugadas;
+ALTER TABLE clientes 
+ALTER COLUMN saldo SET DEFAULT 500.0;
+ALTER TABLE Usuarios ADD COLUMN saldo DECIMAL(10,2) DEFAULT 500.0;
+ALTER TABLE Clientes DROP COLUMN saldo;
