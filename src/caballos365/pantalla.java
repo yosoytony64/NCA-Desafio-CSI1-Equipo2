@@ -11,13 +11,16 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.ResultSet;
+import javax.swing.JLabel;
 
 
 /**
  *
  * @author alber
  */
+
 public class pantalla extends javax.swing.JFrame {
+
 Conexion con = new Conexion();
 public static String usuarioIdentificado; // Se llenará al hacer Login
 public static double saldoApp = 0.0;
@@ -25,9 +28,15 @@ public static String caballoApostado = "";
 public static double montoApuesta = 0.0;
 public static int multiplicador = 2; 
 
+
+private JLabel[] Caballo;
+
     public pantalla() {
         initComponents();
         con.conectar();
+        jLabel22.setText(String.valueOf(pantalla.saldoApp));
+        Caballo = new JLabel[]{jLabel17, jLabel18, jLabel19, jLabel20, jLabel21};
+
     }
 
     /**
@@ -65,10 +74,11 @@ public static int multiplicador = 2;
         jTextField6 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jButton13 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jDialog6 = new javax.swing.JDialog();
@@ -102,19 +112,19 @@ public static int multiplicador = 2;
         jDialog1.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 60));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/verdebien-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+        jDialog1.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/gifmoradobien-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 160, 110));
+        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 160, 130));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/AZULBIEN-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        jDialog1.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/ROJOBIEN-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, -1));
+        jDialog1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/AMARILLOBIEN-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
+        jDialog1.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, -1));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/fondogif.gif"))); // NOI18N
         jLabel13.setText("jLabel13");
@@ -213,26 +223,59 @@ public static int multiplicador = 2;
                 jTextField6ActionPerformed(evt);
             }
         });
-        jDialog5.getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(757, 546, 250, 60));
+        jDialog5.getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 730, 340, 80));
 
-        jLabel20.setText("jLabel20");
-        jDialog5.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 370, -1, -1));
+        jLabel20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel20MouseClicked(evt);
+            }
+        });
+        jDialog5.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 270, 170, 170));
 
-        jLabel21.setText("jLabel21");
-        jDialog5.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 360, -1, -1));
+        jLabel21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel21MouseClicked(evt);
+            }
+        });
+        jDialog5.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 270, 170, 170));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Aura.jpg"))); // NOI18N
-        jDialog5.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 551, -1, 50));
+        jLabel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel19MouseClicked(evt);
+            }
+        });
+        jDialog5.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 270, 170, 170));
 
-        jLabel19.setText("jLabel19");
-        jDialog5.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 370, -1, -1));
+        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel18MouseClicked(evt);
+            }
+        });
+        jDialog5.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 160, 170));
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/caballoamarillocap.png"))); // NOI18N
-        jDialog5.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, -1, -1));
+        jButton13.setBorderPainted(false);
+        jButton13.setContentAreaFilled(false);
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jDialog5.getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 857, 430, 120));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/caballoazulcap.png"))); // NOI18N
-        jLabel17.setText("jLabel17");
-        jDialog5.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 210, -1));
+        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
+        });
+        jDialog5.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(725, 266, 170, 180));
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jDialog5.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, 140, 50));
 
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -241,14 +284,11 @@ public static int multiplicador = 2;
                 jButton7ActionPerformed(evt);
             }
         });
-        jDialog5.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(699, 867, 590, 130));
+        jDialog5.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 850, 440, 130));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/ImagenInscripcionCarrera.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/ImagenInscipcionCarreraBueno.png"))); // NOI18N
         jLabel12.setText("jLabel12");
-        jLabel12.setMaximumSize(new java.awt.Dimension(1920, 1080));
-        jLabel12.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jLabel12.setPreferredSize(new java.awt.Dimension(1920, 1080));
-        jDialog5.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2010, 1080));
+        jDialog5.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jDialog6.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog6.setMinimumSize(new java.awt.Dimension(1920, 1080));
@@ -370,39 +410,7 @@ public static int multiplicador = 2;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//    String usuario = jTextField1.getText();
-//    String pass = jPasswordField1.getText();
-//    
-//        if (!usuario.equals("") || !pass.equals("")) {
-//            try{
-//                Connection conexionReal = Conexion.conectar();
-//                java.sql.PreparedStatement ps = conexionReal.prepareStatement("SELECT nivel_acceso FROM usuarios WHERE (nombre = '"+usuario+"' OR email = '"+usuario+"') and contraseña = '"+pass+"'");
-//                ResultSet rs=ps.executeQuery(); 
-//                if (rs.next()) {
-//                    String nivel_acceso=rs.getString("nivel_acceso");
-//                    if (nivel_acceso.equalsIgnoreCase("Usuario")) {
-//                        jDialog4.setVisible(true);
-//                        pantalla obj_pantalla = new pantalla();
-//        obj_pantalla.setVisible(false);
-//                        
-//                    }
-//                    if (nivel_acceso.equalsIgnoreCase("Administrador")) {
-//                        jDialog2.setVisible(true);
-//                        pantalla obj_pantalla = new pantalla();
-//        obj_pantalla.setVisible(false);
-//                        
-//                    }
-//                    
-//                }else{
-//                    JOptionPane.showMessageDialog(null, "Usuario o Contaseña incorrectos");
-//                }
-//            }catch(Exception e){
-//                JOptionPane.showMessageDialog(null, "No se puede iniciar sesión");
-//                
-//            }
-//        }else{
-//            JOptionPane.showMessageDialog(null, "Introduzca Los Datos");
-//        }
+
     String usuarioInput = jTextField1.getText();
     String passInput = jPasswordField1.getText();
     
@@ -421,7 +429,7 @@ public static int multiplicador = 2;
             ResultSet rs = ps.executeQuery(); 
             
             if (rs.next()) {
-                // Guardamos el saldo y el nombre del usuario logueado
+                // Guardamos el saldo y el nombre del usuario 
                 pantalla.saldoApp = rs.getDouble("saldo"); 
                 pantalla.usuarioIdentificado = rs.getString("nombre"); 
                 
@@ -493,26 +501,9 @@ public static int multiplicador = 2;
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        // Definimos dónde está la meta 
-    int coordenadaMeta = 1800; 
-    
-    // 1. Reiniciamos la variable de ganador 
-    
-    // 2. Creamos los 5 objetos Caballo
+       
    
-    Caballo c1 = new Caballo("Rayo", jLabel5, coordenadaMeta);
-    Caballo c2 = new Caballo("Pepe", jLabel6, coordenadaMeta);
-    Caballo c3 = new Caballo("Joaquin", jLabel8, coordenadaMeta);
-    Caballo c4 = new Caballo("Raul", jLabel7, coordenadaMeta);
-    Caballo c5 = new Caballo("Raul", jLabel9, coordenadaMeta);
-
-   
-    c1.start();
-    c2.start();
-    c3.start();
-    c4.start();
-    c5.start();
+    
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -524,18 +515,53 @@ public static int multiplicador = 2;
     
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        jDialog5.setVisible(false);
-        jDialog1.setVisible(true);
+       if (pantalla.montoApuesta <= 0) {
+        JOptionPane.showMessageDialog(this, "¡Atención! Primero debes introducir un monto y pulsar 'CONFIRMAR APUESTA'.");
+        return;
+    }
+
+    
+
+    // 3. INICIO DE LOS HILOS (Lógica de los caballos)
+    int coordenadaMeta = 1800; 
+
+    try {
+        pantalla carrera = new pantalla();
+        
+        Caballo c1 = new Caballo("Caballo Amarillo", jLabel7, coordenadaMeta);
+        Caballo c2 = new Caballo("Caballo Rojo", jLabel6, coordenadaMeta);
+        Caballo c3 = new Caballo("Caballo Verde", jLabel8, coordenadaMeta);
+        Caballo c4 = new Caballo("Caballo Morado", jLabel5, coordenadaMeta);
+        Caballo c5 = new Caballo("Caballo Azul", jLabel9, coordenadaMeta);
+
+        // Iniciamos el movimiento de todos los hilos
+        c1.start();
+        c2.start();
+        c3.start();
+        c4.start();
+        c5.start();
+        
+        System.out.println("Hilos lanzados con éxito para el caballo: " + pantalla.caballoApostado);
+
+        
+        // CREO QUE HAY ERROR
+        carrera.setVisible(true);
+        jDialog1.setVisible(false);
+       
+        
+        // Cerramos la ventana de apuestas actual
+        this.dispose(); 
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error crítico al iniciar la carrera: " + e.getMessage());
+        jButton7.setEnabled(true);
+    }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -621,6 +647,74 @@ public static int multiplicador = 2;
     }
     }//GEN-LAST:event_jButton12ActionPerformed
 
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        // TODO add your handling code here:
+        Jugada.seleccionarCaballo(jLabel18, "Caballo Azul", Caballo);
+                pantalla.caballoApostado = "Caballo Azul";
+
+    }//GEN-LAST:event_jLabel18MouseClicked
+
+    private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
+        // TODO add your handling code here:
+        Jugada.seleccionarCaballo(jLabel19, "Caballo Morado", Caballo);
+        pantalla.caballoApostado = "Caballo Morado";
+
+    }//GEN-LAST:event_jLabel19MouseClicked
+
+    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+        // TODO add your handling code here:
+        Jugada.seleccionarCaballo(jLabel20, "Caballo Verde", Caballo);
+        pantalla.caballoApostado = "Caballo Verde";
+    }//GEN-LAST:event_jLabel20MouseClicked
+
+    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
+        // TODO add your handling code here:
+        Jugada.seleccionarCaballo(jLabel21, "Caballo Amarillo", Caballo);
+        pantalla.caballoApostado = "Caballo Amarillo";
+
+    }//GEN-LAST:event_jLabel21MouseClicked
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        if (pantalla.caballoApostado.equals("")) {
+        JOptionPane.showMessageDialog(this, "Selecciona un caballo haciendo clic en su imagen.");
+        return;
+    }
+
+    try {
+        double monto = Double.parseDouble(jTextField6.getText());
+        
+        // 2. Validar saldo
+        if (monto <= 0 || monto > pantalla.saldoApp) {
+            JOptionPane.showMessageDialog(this, "Monto inválido o saldo insuficiente.");
+            return;
+        }
+
+        
+        
+        // Restamos el saldo y actualizamos el label de "TU SALDO"
+        pantalla.saldoApp -= monto;
+        jLabel22.setText(pantalla.saldoApp + " Auras");
+        
+        // Actualizamos la base de datos de una vez
+        actualizarSaldoBD db = new actualizarSaldoBD();
+        db.actualizarSaldo(pantalla.usuarioIdentificado, pantalla.saldoApp);
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Escribe un número válido.");
+    }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+        // TODO add your handling code here:
+    Jugada.seleccionarCaballo(jLabel17, "Caballo Rojo", Caballo);
+    pantalla.caballoApostado = "Caballo Rojo"; 
+    }//GEN-LAST:event_jLabel17MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -661,6 +755,7 @@ public static int multiplicador = 2;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -677,7 +772,6 @@ public static int multiplicador = 2;
     private javax.swing.JDialog jDialog6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -689,6 +783,7 @@ public static int multiplicador = 2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
