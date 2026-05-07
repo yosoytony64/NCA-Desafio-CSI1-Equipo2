@@ -4,8 +4,11 @@
  */
 package caballos365;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JProgressBar;
 
 /**
  *
@@ -16,12 +19,13 @@ public class Caballo extends Thread {
     private JLabel imagen; // El JLabel con el GIF
     private int meta;      // La coordenada X de la meta
     private static boolean hayGanador = false;
+    private JProgressBar barra;
     
-    public Caballo(String nombre, JLabel imagen, int meta) {
+    public Caballo(String nombre, JLabel imagen, int meta, JProgressBar barra) {
         this.nombre = nombre;
         this.imagen = imagen;
         this.meta = meta;
-        
+        this.barra = barra;
 }
     
     public void run() {
@@ -34,6 +38,13 @@ public class Caballo extends Thread {
     int duracionRacha = (int)(Math.random() * 100) + 50; // Cuánto tiempo mantendrá el ritmo
 
     while (xActual < meta && !hayGanador) {
+        barra.setValue((int) xActual); 
+        
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Caballo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         try {
             // 1. CADA CIERTO TIEMPO (RACHA LARGA), EL CABALLO CAMBIA DE RITMO
             if (contador >= duracionRacha) {

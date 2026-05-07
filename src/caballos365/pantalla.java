@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.ResultSet;
+import javax.swing.Timer;
 
 
 /**
@@ -24,10 +25,15 @@ public static double saldoApp = 0.0;
 public static String caballoApostado = ""; 
 public static double montoApuesta = 0.0;
 public static int multiplicador = 2; 
+ Timer timer;
+boolean corriendo = false;
+int progreso = 0;
+int velocidad = 30; // Velocidad constante para ambos objetos
+int puntoDondeSeQuedaLaMeta = 0; // Ajusta este valor según tu diseño
 
     public pantalla() {
         initComponents();
-        con.conectar();
+        con.conectar();     
     }
 
     /**
@@ -41,12 +47,21 @@ public static int multiplicador = 2;
 
         jDialog1 = new javax.swing.JDialog();
         jButton5 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jProgressBar2 = new javax.swing.JProgressBar();
+        jProgressBar3 = new javax.swing.JProgressBar();
+        jProgressBar4 = new javax.swing.JProgressBar();
+        jProgressBar5 = new javax.swing.JProgressBar();
         jDialog2 = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         jDialog3 = new javax.swing.JDialog();
@@ -101,24 +116,66 @@ public static int multiplicador = 2;
         });
         jDialog1.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 60));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/verdebien-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
-
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/gifmoradobien-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 160, 110));
+        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 160, 110));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/AZULBIEN-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/verdebien-ezgif.com-resize.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/ROJOBIEN-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, -1));
+        jDialog1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/AZULBIEN-ezgif.com-resize.gif"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/AMARILLOBIEN-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
+        jDialog1.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, -1, -1));
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/liniaaas.png"))); // NOI18N
+        jLabel25.setText("jLabel25");
+        jLabel25.setMaximumSize(new java.awt.Dimension(1962, 540));
+        jLabel25.setMinimumSize(new java.awt.Dimension(1962, 540));
+        jLabel25.setPreferredSize(new java.awt.Dimension(1962, 540));
+        jDialog1.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(8000, -10, 1960, 560));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\alber\\Downloads\\Diseño sin título (1).png")); // NOI18N
+        jDialog1.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1950, 560));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/fondogif.gif"))); // NOI18N
         jLabel13.setText("jLabel13");
         jDialog1.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 540));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon("C:\\Users\\alber\\Downloads\\Diseño sin título (1).png")); // NOI18N
+        jDialog1.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1950, 550));
+
+        jLabel24.setIcon(new javax.swing.ImageIcon("C:\\Users\\alber\\Downloads\\Diseño sin título (1).png")); // NOI18N
+        jDialog1.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1950, 550));
+
+        jProgressBar1.setBackground(new java.awt.Color(0, 51, 153));
+        jProgressBar1.setMaximum(750);
+        jProgressBar1.setMinimum(470);
+        jDialog1.getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 990, 740, 90));
+
+        jProgressBar2.setBackground(new java.awt.Color(0, 51, 153));
+        jProgressBar2.setMaximum(750);
+        jProgressBar2.setMinimum(470);
+        jDialog1.getContentPane().add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 560, 730, 90));
+
+        jProgressBar3.setBackground(new java.awt.Color(102, 255, 204));
+        jProgressBar3.setForeground(new java.awt.Color(204, 51, 255));
+        jProgressBar3.setMaximum(750);
+        jProgressBar3.setMinimum(470);
+        jDialog1.getContentPane().add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 670, 730, 90));
+
+        jProgressBar4.setBackground(new java.awt.Color(0, 51, 153));
+        jProgressBar4.setMaximum(750);
+        jProgressBar4.setMinimum(470);
+        jDialog1.getContentPane().add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 770, 740, 90));
+
+        jProgressBar5.setBackground(new java.awt.Color(0, 51, 153));
+        jProgressBar5.setMaximum(750);
+        jProgressBar5.setMinimum(470);
+        jDialog1.getContentPane().add(jProgressBar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 880, 740, 90));
 
         jDialog2.setMinimumSize(new java.awt.Dimension(1920, 1080));
 
@@ -203,9 +260,7 @@ public static int multiplicador = 2;
         jLabel2.setText("jLabel2");
         jDialog4.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 1090));
 
-        jDialog5.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog5.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog5.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog5.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
@@ -250,9 +305,7 @@ public static int multiplicador = 2;
         jLabel12.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog5.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 2010, 1080));
 
-        jDialog6.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog6.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog6.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog6.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
@@ -464,7 +517,7 @@ public static int multiplicador = 2;
 
         if (edad < 18) {
             JOptionPane.showMessageDialog(null, "Debes ser mayor de edad");
-            return;
+            return; 
         }
             Connection conexionReal = Conexion.conectar();
 
@@ -493,19 +546,29 @@ public static int multiplicador = 2;
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+    jLabel22.setLocation(0, jLabel22.getY()); // Salida al inicio
+    jLabel25.setLocation(8500, jLabel25.getY()); // Meta lejos a la derecha (fuera de cámara)
+    progreso = 0;
+
+    // 2. Crear y arrancar el Timer
+    if (timer != null && timer.isRunning()) {
+        timer.stop();
+    }
+    
+    timer = new Timer(10, e -> moverSalida());
+    timer.start();         // TODO add your handling code here:
         // Definimos dónde está la meta 
-    int coordenadaMeta = 1800; 
+    int coordenadaMeta = 750; 
     
     // 1. Reiniciamos la variable de ganador 
     
     // 2. Creamos los 5 objetos Caballo
    
-    Caballo c1 = new Caballo("Rayo", jLabel5, coordenadaMeta);
-    Caballo c2 = new Caballo("Pepe", jLabel6, coordenadaMeta);
-    Caballo c3 = new Caballo("Joaquin", jLabel8, coordenadaMeta);
-    Caballo c4 = new Caballo("Raul", jLabel7, coordenadaMeta);
-    Caballo c5 = new Caballo("Raul", jLabel9, coordenadaMeta);
+    Caballo c1 = new Caballo("Rayo", jLabel5, coordenadaMeta, jProgressBar1);
+    Caballo c2 = new Caballo("Pepe", jLabel6, coordenadaMeta, jProgressBar2);
+    Caballo c3 = new Caballo("Joaquin", jLabel8, coordenadaMeta, jProgressBar3);
+    Caballo c4 = new Caballo("Raul", jLabel7, coordenadaMeta, jProgressBar4);
+    Caballo c5 = new Caballo("Raul", jLabel9, coordenadaMeta, jProgressBar5);
 
    
     c1.start();
@@ -624,6 +687,33 @@ public static int multiplicador = 2;
     /**
      * @param args the command line arguments
      */
+    
+    private void moverSalida() {
+
+// Aumentamos el contador de progreso en cada tick del reloj
+    progreso += velocidad;
+
+    // --- MOVIMIENTO DE LA SALIDA ---
+    // Si la salida aún es visible, la movemos a la izquierda
+    if (jLabel22.getX() + jLabel22.getWidth() > 0) {
+        jLabel22.setLocation(jLabel22.getX() - velocidad, jLabel22.getY());
+    }
+
+    // --- MOVIMIENTO DE LA META ---
+    // Definimos cuándo queremos que aparezca (ej. tras 300 ticks/3000px de carrera)
+    // Ajusta el '2500' para hacer la carrera más larga o corta
+    if (progreso > 8500) { 
+        
+        // Si la meta aún no ha llegado a su punto de parada
+        if (jLabel25.getX() > puntoDondeSeQuedaLaMeta) {
+            // Se mueve a la izquierda a la misma velocidad que se fue la salida
+            jLabel25.setLocation(jLabel25.getX() - velocidad, jLabel25.getY());
+        } else {
+            // OPCIONAL: Si quieres que el timer se detenga cuando la meta llegue:
+            // timer.stop(); 
+        }
+    }
+}
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -689,6 +779,10 @@ public static int multiplicador = 2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -697,6 +791,11 @@ public static int multiplicador = 2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JProgressBar jProgressBar2;
+    private javax.swing.JProgressBar jProgressBar3;
+    private javax.swing.JProgressBar jProgressBar4;
+    private javax.swing.JProgressBar jProgressBar5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
