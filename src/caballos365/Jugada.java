@@ -4,6 +4,10 @@
  */
 package caballos365;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Jorge
@@ -14,21 +18,18 @@ public class Jugada {
     private Carrera IDcarrera;
     private double monto;
     private String estado;
-    private int idCaballoElegido;
+   
     private double cantidadApostada;
+    public static String caballoSeleccionado = "";
+    public static double montoApostado = 0;
+    public static int multiplicador = 1;
 
-    public Jugada(int idCaballoElegido, double cantidadApostada) {
-        this.idCaballoElegido = idCaballoElegido;
+    public Jugada(double cantidadApostada) {
+        
         this.cantidadApostada = cantidadApostada;
     }
 
-    public int getIdCaballoElegido() {
-        return idCaballoElegido;
-    }
-
-    public void setIdCaballoElegido(int idCaballoElegido) {
-        this.idCaballoElegido = idCaballoElegido;
-    }
+    
 
     public double getCantidadApostada() {
         return cantidadApostada;
@@ -42,4 +43,25 @@ public class Jugada {
     public double calcularPremio() {
         return cantidadApostada * 2;
     }
+    
+    public static void seleccionarCaballo(JLabel labelElegido, String nombre, JLabel[] todosLosLabels) {
+        // 1. Guardamos la elección
+        caballoSeleccionado = nombre;
+
+        // 2. Limpiamos los bordes de todos los labels del array
+        for (JLabel lbl : todosLosLabels) {
+            lbl.setBorder(null);
+        }
+
+        // 3. Resaltamos el elegido con un borde grueso (ej: Color Oro)
+        labelElegido.setBorder(BorderFactory.createLineBorder(new Color(255, 215, 0), 4));
+        
+        System.out.println("Caballo listo para la carrera: " + nombre);
+    }
+    
+    public static void reiniciarApuesta() {
+        caballoSeleccionado = "";
+        montoApostado = 0;
+        multiplicador = 1;
+}
 }

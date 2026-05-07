@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Jorge
+ * @author JorgeS
  */
 public class Caballos365 extends Application {
     
