@@ -39,10 +39,10 @@ public class Caballo extends Thread {
             if (contador >= duracionRacha) {
                 // nueva velocidad para los próximos segundos
                 // Unos caballos irán a 0.5 (muy lentos) y otros a 2.3 (rápidos)
-                double nuevaVelocidad = (Math.random() * 2.3) + 0.5;
+                double nuevaVelocidad = (Math.random() * 4.0) + 0.5;
                 
                 // Actualizamos la duración de la próxima racha
-                duracionRacha = (int)(Math.random() * 100) + 50;
+                duracionRacha = (int)(Math.random() * 50) + 20;
                 contador = 0;
                 
                 // Suavizamos el cambio de velocidad, asi no pegara tiro)
@@ -53,8 +53,9 @@ public class Caballo extends Thread {
             xActual += velocidadActual;
             imagen.setLocation((int) xActual, y);
 
+            imagen.getParent().repaint();
             contador++;
-            Thread.sleep(15); // Fluidez total
+            Thread.sleep(20); // Fluidez total
 
         } catch (InterruptedException e) {
             break;

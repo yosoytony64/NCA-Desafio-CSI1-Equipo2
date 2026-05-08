@@ -49,7 +49,6 @@ private JLabel[] Caballo;
     private void initComponents() {
 
         jDialog1 = new javax.swing.JDialog();
-        jButton5 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -100,16 +99,6 @@ private JLabel[] Caballo;
 
         jDialog1.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton5.setBackground(new java.awt.Color(255, 0, 0));
-        jButton5.setForeground(new java.awt.Color(0, 255, 51));
-        jButton5.setText("empezar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jDialog1.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 60));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/verdebien-ezgif.com-resize.gif"))); // NOI18N
         jDialog1.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, -1, -1));
@@ -274,8 +263,9 @@ private JLabel[] Caballo;
         });
         jDialog5.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(725, 266, 170, 180));
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jDialog5.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, 140, 50));
+        jLabel22.setFont(new java.awt.Font("MV Boli", 1, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jDialog5.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, 320, 50));
 
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -288,6 +278,10 @@ private JLabel[] Caballo;
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/ImagenInscipcionCarreraBueno.png"))); // NOI18N
         jLabel12.setText("jLabel12");
+        jLabel12.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        jLabel12.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        jLabel12.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jLabel12.setRequestFocusEnabled(false);
         jDialog5.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jDialog6.setMaximumSize(new java.awt.Dimension(1920, 1080));
@@ -500,18 +494,13 @@ private JLabel[] Caballo;
         }// TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       
-   
-    
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
       
     // 4. Mostrar el nuevo diálogo
     jDialog4.setVisible(false);
     jDialog5.setVisible(true);
+    jLabel22.setText(pantalla.saldoApp + " Auras");
     
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -521,47 +510,41 @@ private JLabel[] Caballo;
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-       if (pantalla.montoApuesta <= 0) {
-        JOptionPane.showMessageDialog(this, "¡Atención! Primero debes introducir un monto y pulsar 'CONFIRMAR APUESTA'.");
+      if (pantalla.montoApuesta <= 0) {
+        JOptionPane.showMessageDialog(this, "¡Atención! Primero debes CONFIRMAR tu apuesta.");
         return;
     }
 
-    
-
-    // 3. INICIO DE LOS HILOS (Lógica de los caballos)
-    int coordenadaMeta = 1800; 
-
     try {
-        pantalla carrera = new pantalla();
-        
-        Caballo c1 = new Caballo("Caballo Amarillo", jLabel7, coordenadaMeta);
+        // 
+        jDialog1.setModal(false); // Para que los hilos se muevan
+    jDialog1.setVisible(true);
+    jDialog1.setLocationRelativeTo(null); //
+
+        int coordenadaMeta = 1800;
+
+        // Usamos los labels de la nueva ventana para que los hilos tengan qué mover
+        Caballo c1 = new Caballo("Caballo Amarillo",jLabel7, coordenadaMeta);
         Caballo c2 = new Caballo("Caballo Rojo", jLabel6, coordenadaMeta);
         Caballo c3 = new Caballo("Caballo Verde", jLabel8, coordenadaMeta);
         Caballo c4 = new Caballo("Caballo Morado", jLabel5, coordenadaMeta);
         Caballo c5 = new Caballo("Caballo Azul", jLabel9, coordenadaMeta);
 
-        // Iniciamos el movimiento de todos los hilos
         c1.start();
         c2.start();
         c3.start();
         c4.start();
         c5.start();
         
-        System.out.println("Hilos lanzados con éxito para el caballo: " + pantalla.caballoApostado);
-
-        
-        // CREO QUE HAY ERROR
-        carrera.setVisible(true);
-        jDialog1.setVisible(false);
        
-        
-        // Cerramos la ventana de apuestas actual
-        this.dispose(); 
+        // Cerramos el menú de apuestas 
+        jDialog4.setVisible(false); 
+        jDialog1.setVisible(true);
 
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Error crítico al iniciar la carrera: " + e.getMessage());
-        jButton7.setEnabled(true);
+        JOptionPane.showMessageDialog(this, "Error al iniciar hilos: " + e.getMessage());
     }
+      
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -680,29 +663,34 @@ private JLabel[] Caballo;
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        if (pantalla.caballoApostado.equals("")) {
-        JOptionPane.showMessageDialog(this, "Selecciona un caballo haciendo clic en su imagen.");
+        // 1. Validar que hay algo seleccionado
+    if (pantalla.caballoApostado == null || pantalla.caballoApostado.equals("")) {
+        JOptionPane.showMessageDialog(this, "Selecciona un caballo primero.");
         return;
     }
 
     try {
         double monto = Double.parseDouble(jTextField6.getText());
         
-        // 2. Validar saldo
         if (monto <= 0 || monto > pantalla.saldoApp) {
-            JOptionPane.showMessageDialog(this, "Monto inválido o saldo insuficiente.");
+            JOptionPane.showMessageDialog(this, "Saldo insuficiente o monto inválido.");
             return;
         }
 
-        
-        
-        // Restamos el saldo y actualizamos el label de "TU SALDO"
+        // 2. REALIZAR LA APUESTA
+        pantalla.montoApuesta = monto; // Guardamos en la variable estática
         pantalla.saldoApp -= monto;
         jLabel22.setText(pantalla.saldoApp + " Auras");
+
+        // 3. BLOQUEO DE SEGURIDAD 
+        jButton13.setEnabled(false); 
+        jTextField6.setEditable(false);
         
-        // Actualizamos la base de datos de una vez
+        // 4. Actualizar Base de Datos
         actualizarSaldoBD db = new actualizarSaldoBD();
         db.actualizarSaldo(pantalla.usuarioIdentificado, pantalla.saldoApp);
+
+        JOptionPane.showMessageDialog(this, "Apuesta confirmada por: " + pantalla.caballoApostado);
 
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "Escribe un número válido.");
@@ -759,7 +747,6 @@ private JLabel[] Caballo;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
