@@ -55,6 +55,7 @@ private JLabel[] Caballo;
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
         jDialog2 = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         jDialog3 = new javax.swing.JDialog();
@@ -118,6 +119,7 @@ private JLabel[] Caballo;
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/fondogif.gif"))); // NOI18N
         jLabel13.setText("jLabel13");
         jDialog1.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 540));
+        jDialog1.getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 554, -1, 60));
 
         jDialog2.setMinimumSize(new java.awt.Dimension(1920, 1080));
 
@@ -202,9 +204,7 @@ private JLabel[] Caballo;
         jLabel2.setText("jLabel2");
         jDialog4.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 1090));
 
-        jDialog5.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog5.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog5.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog5.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
@@ -244,7 +244,7 @@ private JLabel[] Caballo;
                 jLabel18MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 160, 170));
+        jDialog5.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 160, 170));
 
         jButton13.setBorderPainted(false);
         jButton13.setContentAreaFilled(false);
@@ -284,9 +284,7 @@ private JLabel[] Caballo;
         jLabel12.setRequestFocusEnabled(false);
         jDialog5.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jDialog6.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog6.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog6.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog6.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
@@ -524,11 +522,11 @@ private JLabel[] Caballo;
         int coordenadaMeta = 1800;
 
         // Usamos los labels de la nueva ventana para que los hilos tengan qué mover
-        Caballo c1 = new Caballo("Caballo Amarillo",jLabel7, coordenadaMeta);
-        Caballo c2 = new Caballo("Caballo Rojo", jLabel6, coordenadaMeta);
-        Caballo c3 = new Caballo("Caballo Verde", jLabel8, coordenadaMeta);
-        Caballo c4 = new Caballo("Caballo Morado", jLabel5, coordenadaMeta);
-        Caballo c5 = new Caballo("Caballo Azul", jLabel9, coordenadaMeta);
+        Caballo c1 = new Caballo("Caballo Amarillo",jLabel7, coordenadaMeta, jProgressBar1);
+        Caballo c2 = new Caballo("Caballo Rojo", jLabel6, coordenadaMeta, jProgressBar1);
+        Caballo c3 = new Caballo("Caballo Verde", jLabel8, coordenadaMeta, jProgressBar1);
+        Caballo c4 = new Caballo("Caballo Morado", jLabel5, coordenadaMeta, jProgressBar1);
+        Caballo c5 = new Caballo("Caballo Azul", jLabel9, coordenadaMeta, jProgressBar1);
 
         c1.start();
         c2.start();
@@ -779,6 +777,7 @@ private JLabel[] Caballo;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
