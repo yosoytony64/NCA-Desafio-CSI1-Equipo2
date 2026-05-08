@@ -77,8 +77,8 @@ private JLabel[] Caballo;
         jLabel19 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jDialog6 = new javax.swing.JDialog();
@@ -220,7 +220,7 @@ private JLabel[] Caballo;
                 jLabel20MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 270, 170, 170));
+        jDialog5.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 280, 170, 180));
 
         jLabel21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -228,7 +228,7 @@ private JLabel[] Caballo;
                 jLabel21MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 270, 170, 170));
+        jDialog5.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 280, 170, 180));
 
         jLabel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel19.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -236,7 +236,7 @@ private JLabel[] Caballo;
                 jLabel19MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 270, 170, 170));
+        jDialog5.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 280, 170, 180));
 
         jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -255,17 +255,17 @@ private JLabel[] Caballo;
         });
         jDialog5.getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 857, 430, 120));
 
+        jLabel22.setFont(new java.awt.Font("MV Boli", 1, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jDialog5.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, 320, 50));
+
         jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel17MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(725, 266, 170, 180));
-
-        jLabel22.setFont(new java.awt.Font("MV Boli", 1, 24)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jDialog5.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, 320, 50));
+        jDialog5.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(725, 286, 170, 170));
 
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -524,9 +524,9 @@ private JLabel[] Caballo;
         // Usamos los labels de la nueva ventana para que los hilos tengan qué mover
         Caballo c1 = new Caballo("Caballo Amarillo",jLabel7, coordenadaMeta, jProgressBar1);
         Caballo c2 = new Caballo("Caballo Rojo", jLabel6, coordenadaMeta, jProgressBar1);
-        Caballo c3 = new Caballo("Caballo Verde", jLabel8, coordenadaMeta, jProgressBar1);
+        Caballo c3 = new Caballo("Caballo Azul", jLabel8, coordenadaMeta, jProgressBar1);
         Caballo c4 = new Caballo("Caballo Morado", jLabel5, coordenadaMeta, jProgressBar1);
-        Caballo c5 = new Caballo("Caballo Azul", jLabel9, coordenadaMeta, jProgressBar1);
+        Caballo c5 = new Caballo("Caballo Verde", jLabel9, coordenadaMeta, jProgressBar1);
 
         c1.start();
         c2.start();
@@ -630,28 +630,28 @@ private JLabel[] Caballo;
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
         // TODO add your handling code here:
-        Jugada.seleccionarCaballo(jLabel18, "Caballo Azul", Caballo);
-                pantalla.caballoApostado = "Caballo Azul";
+        Jugada.seleccionarCaballo(jLabel18, "Caballo Rojo", Caballo);
+                pantalla.caballoApostado = "Caballo Rojo";
 
     }//GEN-LAST:event_jLabel18MouseClicked
 
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
         // TODO add your handling code here:
-        Jugada.seleccionarCaballo(jLabel19, "Caballo Morado", Caballo);
-        pantalla.caballoApostado = "Caballo Morado";
+        Jugada.seleccionarCaballo(jLabel19, "Caballo Verde", Caballo);
+        pantalla.caballoApostado = "Caballo Verde";
 
     }//GEN-LAST:event_jLabel19MouseClicked
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
         // TODO add your handling code here:
-        Jugada.seleccionarCaballo(jLabel20, "Caballo Verde", Caballo);
-        pantalla.caballoApostado = "Caballo Verde";
+        Jugada.seleccionarCaballo(jLabel20, "Caballo Amarillo", Caballo);
+        pantalla.caballoApostado = "Caballo Amarillo";
     }//GEN-LAST:event_jLabel20MouseClicked
 
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
         // TODO add your handling code here:
-        Jugada.seleccionarCaballo(jLabel21, "Caballo Amarillo", Caballo);
-        pantalla.caballoApostado = "Caballo Amarillo";
+        Jugada.seleccionarCaballo(jLabel21, "Caballo Azul", Caballo);
+        pantalla.caballoApostado = "Caballo Azul";
 
     }//GEN-LAST:event_jLabel21MouseClicked
 
@@ -697,8 +697,8 @@ private JLabel[] Caballo;
 
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
         // TODO add your handling code here:
-    Jugada.seleccionarCaballo(jLabel17, "Caballo Rojo", Caballo);
-    pantalla.caballoApostado = "Caballo Rojo"; 
+        Jugada.seleccionarCaballo(jLabel17, "Caballo Morado", Caballo);
+        pantalla.caballoApostado = "Caballo Morado";
     }//GEN-LAST:event_jLabel17MouseClicked
 
     /**
