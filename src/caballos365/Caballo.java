@@ -91,6 +91,8 @@ public class Caballo extends Thread {
         
         JOptionPane.showMessageDialog(null, "¡GANASTE! El caballo " + ganador + " llegó primero.\n"
                 + "Premio: " + premio + " Auras.");
+        
+        
     } else {
         JOptionPane.showMessageDialog(null, "Ha ganado el caballo " + ganador + ".\n"
                 + "Has perdido la carrera.");
