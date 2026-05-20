@@ -44,8 +44,8 @@ private JLabel[] Caballo;
         con.conectar();
         jLabel22.setText(String.valueOf(pantalla.saldoApp));
         Caballo = new JLabel[]{jLabel17, jLabel18, jLabel19, jLabel20, jLabel21};
-        jButton5.setEnabled(false);
-jButton14.setEnabled(false);
+        jLabel27.setEnabled(false);
+jLabel28.setEnabled(false);
         
 
     }
@@ -65,9 +65,10 @@ jButton14.setEnabled(false);
         jProgressBar3 = new javax.swing.JProgressBar();
         jProgressBar4 = new javax.swing.JProgressBar();
         jProgressBar5 = new javax.swing.JProgressBar();
-        jButton5 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -106,9 +107,9 @@ jButton14.setEnabled(false);
         jLabel12 = new javax.swing.JLabel();
         jDialog6 = new javax.swing.JDialog();
         jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
@@ -127,78 +128,82 @@ jButton14.setEnabled(false);
         jProgressBar1.setBackground(new java.awt.Color(204, 204, 204));
         jProgressBar1.setForeground(new java.awt.Color(204, 204, 0));
         jProgressBar1.setMaximum(1400);
-        jProgressBar1.setMinimum(300);
+        jProgressBar1.setMinimum(150);
+        jProgressBar1.setValue(150);
         jDialog1.getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 640, 1340, 50));
 
         jProgressBar2.setBackground(new java.awt.Color(204, 204, 204));
         jProgressBar2.setForeground(new java.awt.Color(204, 0, 0));
         jProgressBar2.setMaximum(1400);
-        jProgressBar2.setMinimum(300);
+        jProgressBar2.setMinimum(150);
+        jProgressBar2.setValue(150);
         jDialog1.getContentPane().add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 720, 1340, 50));
 
         jProgressBar3.setBackground(new java.awt.Color(204, 204, 204));
         jProgressBar3.setForeground(new java.awt.Color(0, 102, 204));
         jProgressBar3.setMaximum(1400);
-        jProgressBar3.setMinimum(300);
+        jProgressBar3.setMinimum(150);
+        jProgressBar3.setValue(150);
         jDialog1.getContentPane().add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 800, 1340, 50));
 
         jProgressBar4.setBackground(new java.awt.Color(204, 204, 204));
         jProgressBar4.setForeground(new java.awt.Color(102, 0, 255));
         jProgressBar4.setMaximum(1400);
-        jProgressBar4.setMinimum(300);
+        jProgressBar4.setMinimum(150);
+        jProgressBar4.setValue(150);
         jDialog1.getContentPane().add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 880, 1340, 50));
 
         jProgressBar5.setBackground(new java.awt.Color(204, 204, 204));
         jProgressBar5.setForeground(new java.awt.Color(0, 153, 0));
         jProgressBar5.setMaximum(1400);
-        jProgressBar5.setMinimum(300);
+        jProgressBar5.setMinimum(150);
+        jProgressBar5.setValue(150);
         jDialog1.getContentPane().add(jProgressBar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 960, 1340, 50));
 
-        jButton5.setBackground(new java.awt.Color(102, 255, 102));
-        jButton5.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("VOLVER");
-        jButton5.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(0, 0, 0)));
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        jLabel27.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/volvermenu.png"))); // NOI18N
+        jLabel27.setText("jLabel27");
+        jLabel27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel27.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel27MouseClicked(evt);
             }
         });
-        jDialog1.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 560, 340, 70));
-
-        jButton14.setBackground(new java.awt.Color(153, 153, 255));
-        jButton14.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(0, 0, 0));
-        jButton14.setText("VOLVER AL MENÚ PRINCIPAL");
-        jButton14.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(0, 0, 0)));
-        jButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jDialog1.getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 560, 340, 70));
+        jDialog1.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 510, 400, 90));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/verdebien-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, -1, -1));
+        jDialog1.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, -1, -1));
+
+        jLabel28.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/volver.png"))); // NOI18N
+        jLabel28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel28MouseClicked(evt);
+            }
+        });
+        jDialog1.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 500, 400, 110));
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/huecogrande.png"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/gifmoradobien-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 160, 130));
+        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 160, 130));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/AZULBIEN-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
+        jDialog1.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/ROJOBIEN-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
+        jDialog1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/AMARILLOBIEN-ezgif.com-resize.gif"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
+        jDialog1.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/FONDOMETA.png"))); // NOI18N
         jDialog1.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(5000, 0, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/Diseño sin título (1).png"))); // NOI18N
+        jLabel11.setRequestFocusEnabled(false);
         jDialog1.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1960, -1));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/fondogif.gif"))); // NOI18N
@@ -309,7 +314,7 @@ jButton14.setEnabled(false);
         jDialog5.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField6.setBackground(new java.awt.Color(18, 14, 14));
-        jTextField6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jTextField6.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jTextField6.setForeground(new java.awt.Color(255, 255, 255));
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
@@ -378,8 +383,9 @@ jButton14.setEnabled(false);
         jLabel24.setText("jLabel24");
         jDialog5.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(1790, 920, 100, 120));
 
-        jLabel22.setFont(new java.awt.Font("MV Boli", 1, 36)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jDialog5.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 550, 350, 80));
 
         jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -412,20 +418,24 @@ jButton14.setEnabled(false);
         jDialog6.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Impact", 1, 60)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("0");
         jDialog6.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 780, 50));
 
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Aura (1).jpg"))); // NOI18N
+        jDialog6.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, 100, 110));
+
         jButton9.setText(" ");
         jButton9.setBorderPainted(false);
         jButton9.setContentAreaFilled(false);
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
-        jDialog6.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 570, 90));
+        jDialog6.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 590, 100));
 
         jButton11.setBorderPainted(false);
         jButton11.setContentAreaFilled(false);
@@ -436,11 +446,9 @@ jButton14.setEnabled(false);
         });
         jDialog6.getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 910, 830, 90));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Aura (1).jpg"))); // NOI18N
-        jDialog6.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 100, 90));
-
         jButton12.setBorderPainted(false);
         jButton12.setContentAreaFilled(false);
+        jButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
@@ -460,10 +468,11 @@ jButton14.setEnabled(false);
                 jTextField7ActionPerformed(evt);
             }
         });
-        jDialog6.getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 590, 90));
+        jDialog6.getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 480, 90));
 
         jButton10.setBorderPainted(false);
         jButton10.setContentAreaFilled(false);
+        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -640,8 +649,8 @@ jButton14.setEnabled(false);
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        jButton5.setEnabled(false);
-jButton14.setEnabled(false);
+        jLabel27.setEnabled(false);
+jLabel28.setEnabled(false);
      if (carreraActiva) return;
 
     if (pantalla.montoApuesta <= 0) {
@@ -835,21 +844,6 @@ jButton14.setEnabled(false);
         pantalla.caballoApostado = "Caballo Morado";
     }//GEN-LAST:event_jLabel17MouseClicked
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
- 
-resetCarrera();
-
-    jDialog1.setVisible(false);
-    jDialog5.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-resetCarrera();
-
-    jDialog1.setVisible(false);
-    jDialog4.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
-
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
   System.exit(0);       // TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
@@ -858,6 +852,20 @@ resetCarrera();
 jDialog5.setVisible(false);      
 jDialog4.setVisible(true);    // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jLabel27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseClicked
+resetCarrera();
+
+    jDialog1.setVisible(false);
+    jDialog4.setVisible(true);           // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel27MouseClicked
+
+    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
+resetCarrera();
+
+    jDialog1.setVisible(false);
+    jDialog5.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel28MouseClicked
  private void moverSalida() {
 
     if (!carreraActiva) return;
@@ -868,15 +876,19 @@ jDialog4.setVisible(true);    // TODO add your handling code here:
         jLabel11.setLocation(jLabel11.getX() - velocidad, jLabel11.getY());
     }
 
-    if (progreso > 32000) {
+    if (jProgressBar1.getValue() >= 1200 ||
+        jProgressBar2.getValue() >= 1200 ||
+        jProgressBar3.getValue() >= 1200 ||
+        jProgressBar4.getValue() >= 1200 ||
+        jProgressBar5.getValue() >= 1200) {
 
         if (jLabel23.getX() > 0) {
             jLabel23.setLocation(jLabel23.getX() - velocidad, jLabel23.getY());
         } else {
             if (timerCarrera != null) timerCarrera.stop();
             carreraActiva = false;
-            jButton5.setEnabled(true);
-jButton14.setEnabled(true);
+            jLabel27.setEnabled(true);
+            jLabel28.setEnabled(true);
             
             
         }
@@ -947,13 +959,11 @@ jButton14.setEnabled(true);
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -982,6 +992,9 @@ jButton14.setEnabled(true);
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
