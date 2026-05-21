@@ -7,6 +7,8 @@ package caballos365;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -54,7 +56,13 @@ public class Jugada {
         }
 
         // 3. Resaltamos el elegido con un borde grueso (ej: Color Oro)
-        labelElegido.setBorder(BorderFactory.createLineBorder(new Color(255, 215, 0), 4));
+    labelElegido.setBorder(
+    new CompoundBorder(
+            
+        new LineBorder(new Color(255, 215, 0, 80), 10, true), // “glow” suave
+        new LineBorder(new Color(255, 215, 0), 7, true)       // borde real
+    )
+);
         
         System.out.println("Caballo listo para la carrera: " + nombre);
     }

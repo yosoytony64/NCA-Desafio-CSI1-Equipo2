@@ -65,10 +65,12 @@ jLabel28.setEnabled(false);
         jProgressBar3 = new javax.swing.JProgressBar();
         jProgressBar4 = new javax.swing.JProgressBar();
         jProgressBar5 = new javax.swing.JProgressBar();
+        jLabel30 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -129,36 +131,35 @@ jLabel28.setEnabled(false);
         jProgressBar1.setForeground(new java.awt.Color(204, 204, 0));
         jProgressBar1.setMaximum(1400);
         jProgressBar1.setMinimum(150);
-        jProgressBar1.setValue(150);
         jDialog1.getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 640, 1340, 50));
 
         jProgressBar2.setBackground(new java.awt.Color(204, 204, 204));
         jProgressBar2.setForeground(new java.awt.Color(204, 0, 0));
         jProgressBar2.setMaximum(1400);
         jProgressBar2.setMinimum(150);
-        jProgressBar2.setValue(150);
         jDialog1.getContentPane().add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 720, 1340, 50));
 
         jProgressBar3.setBackground(new java.awt.Color(204, 204, 204));
         jProgressBar3.setForeground(new java.awt.Color(0, 102, 204));
         jProgressBar3.setMaximum(1400);
         jProgressBar3.setMinimum(150);
-        jProgressBar3.setValue(150);
         jDialog1.getContentPane().add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 800, 1340, 50));
 
         jProgressBar4.setBackground(new java.awt.Color(204, 204, 204));
         jProgressBar4.setForeground(new java.awt.Color(102, 0, 255));
         jProgressBar4.setMaximum(1400);
         jProgressBar4.setMinimum(150);
-        jProgressBar4.setValue(150);
         jDialog1.getContentPane().add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 880, 1340, 50));
 
         jProgressBar5.setBackground(new java.awt.Color(204, 204, 204));
         jProgressBar5.setForeground(new java.awt.Color(0, 153, 0));
         jProgressBar5.setMaximum(1400);
         jProgressBar5.setMinimum(150);
-        jProgressBar5.setValue(150);
         jDialog1.getContentPane().add(jProgressBar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 960, 1340, 50));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/arribamarco (1).png"))); // NOI18N
+        jLabel30.setText("jLabel29");
+        jDialog1.getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel27.setForeground(new java.awt.Color(255, 51, 51));
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/volvermenu.png"))); // NOI18N
@@ -186,6 +187,10 @@ jLabel28.setEnabled(false);
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/huecogrande.png"))); // NOI18N
         jDialog1.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, -1, -1));
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/arribamarco (1).png"))); // NOI18N
+        jLabel29.setText("jLabel29");
+        jDialog1.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GifsCaballos/SPRITES CABALLOS/gifmoradobien-ezgif.com-resize.gif"))); // NOI18N
         jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 160, 130));
@@ -330,7 +335,7 @@ jLabel28.setEnabled(false);
                 jLabel20MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 280, 170, 180));
+        jDialog5.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 270, 190, 200));
 
         jLabel21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -338,7 +343,7 @@ jLabel28.setEnabled(false);
                 jLabel21MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 280, 170, 180));
+        jDialog5.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 270, 190, 200));
 
         jLabel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel19.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -346,7 +351,7 @@ jLabel28.setEnabled(false);
                 jLabel19MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 280, 170, 180));
+        jDialog5.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 190, 200));
 
         jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -354,7 +359,7 @@ jLabel28.setEnabled(false);
                 jLabel18MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 160, 170));
+        jDialog5.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 180, 190));
 
         jButton13.setBorderPainted(false);
         jButton13.setContentAreaFilled(false);
@@ -394,7 +399,7 @@ jLabel28.setEnabled(false);
                 jLabel17MouseClicked(evt);
             }
         });
-        jDialog5.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(725, 286, 170, 170));
+        jDialog5.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(715, 276, 190, 190));
 
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -876,11 +881,11 @@ resetCarrera();
         jLabel11.setLocation(jLabel11.getX() - velocidad, jLabel11.getY());
     }
 
-    if (jProgressBar1.getValue() >= 1200 ||
-        jProgressBar2.getValue() >= 1200 ||
-        jProgressBar3.getValue() >= 1200 ||
-        jProgressBar4.getValue() >= 1200 ||
-        jProgressBar5.getValue() >= 1200) {
+    if (jProgressBar1.getValue() >= 1260 ||
+        jProgressBar2.getValue() >= 1260 ||
+        jProgressBar3.getValue() >= 1260 ||
+        jProgressBar4.getValue() >= 1260 ||
+        jProgressBar5.getValue() >= 1260) {
 
         if (jLabel23.getX() > 0) {
             jLabel23.setLocation(jLabel23.getX() - velocidad, jLabel23.getY());
@@ -995,7 +1000,9 @@ resetCarrera();
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
