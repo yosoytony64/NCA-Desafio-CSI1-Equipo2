@@ -1,0 +1,27 @@
+<!ELEMENT root (row+)>
+
+<!ELEMENT row (
+    ID,
+    Nombre,
+    Raza,
+    Edad,
+    Color,
+    Altura_cm,
+    Peso_kg,
+    País_Origen,
+    Disciplina,
+    Precio_EUR,
+    Foto
+)>
+
+<!ELEMENT ID (#PCDATA)>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Raza (#PCDATA)>
+<!ELEMENT Edad (#PCDATA)>
+<!ELEMENT Color (#PCDATA)>
+<!ELEMENT Altura_cm (#PCDATA)>
+<!ELEMENT Peso_kg (#PCDATA)>
+<!ELEMENT País_Origen (#PCDATA)>
+<!ELEMENT Disciplina (#PCDATA)>
+<!ELEMENT Precio_EUR (#PCDATA)>
+<!ELEMENT Foto (#PCDATA)>
