@@ -19,27 +19,25 @@ VALUES ('Fernando Alonso', 44, 'usuario1@gmail.com', 'usuario123');
 
 -- CABALLO 1
 INSERT INTO caballos (id_caballo,nombre, color) 
-VALUES (1, "Josep", "Rojo");
+VALUES (1, "Josep (Caballo Rojo)", "Rojo");
 
 -- CABALLO 2
 INSERT INTO caballos (id_caballo,nombre, color) 
-VALUES (2, "Javier", 'Verde');
+VALUES (2, "Javier (Caballo Verde)", 'Verde');
 
 -- CABALLO 3
 INSERT INTO caballos (id_caballo,nombre, color) 
-VALUES (3, "Alberto", 'Blanco');
+VALUES (3, "Alberto (Caballo Amarillo)", 'Amarillo');
 
 
 -- CABALLO 4
 INSERT INTO caballos (id_caballo,nombre, color) 
-VALUES (4, "Edgar", 'Marron');
+VALUES (4, "Edgar (Caballo Azul)", 'Azul');
 
 -- CABALLO 5
 INSERT INTO caballos (id_caballo,nombre, color) 
-VALUES (5, "Sionne", 'Negro');
+VALUES (5, "Sionne (Caballo Morado)", 'Morado');
 
--- Caballo 6
-Insert Into caballos (id_caballo,nombre, color) 
-VALUES (6, "Lucas", 'Amarillo');
+
 
 

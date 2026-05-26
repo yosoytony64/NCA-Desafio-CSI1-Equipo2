@@ -4,6 +4,7 @@
  */
 package caballos365;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +31,10 @@ public static double montoApuesta = 0.0; //Guarda cuanta auta a elegido jugar el
 public static int multiplicador = 2; //Variable que multiplica x2 las ganancias(en caso de que gane)
 int progreso = 0;
 int velocidad = 30; // Velocidad constante para ambos objetos
+Historial historial = new Historial();
+Connection conexionReal = Conexion.conectar();
+public static int idCarreraActual = 0;  
+
 
 
 //Son los encargados de controlar el tiempo y el movimiento de la carrera para que los caballos no se muevan antes de tiempo.
@@ -46,6 +51,9 @@ private JLabel[] Caballo;
         Caballo = new JLabel[]{jLabel17, jLabel18, jLabel19, jLabel20, jLabel21};//Guarda y agrupa los caballos
         jLabel27.setEnabled(false);
         jLabel28.setEnabled(false);
+        jScrollPane1.getViewport().setBackground(new Color(222, 200, 161));
+        jTable1.getTableHeader().setBackground(new Color(222, 200, 161));
+        jTable1.getTableHeader().setForeground(new Color(44, 34, 22));
         
 
     }
@@ -90,6 +98,7 @@ private JLabel[] Caballo;
         jButton4 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jDialog4 = new javax.swing.JDialog();
+        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
@@ -118,6 +127,12 @@ private JLabel[] Caballo;
         jButton10 = new javax.swing.JButton();
         jTextField8 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jDialog7 = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel31 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jTextField1 = new javax.swing.JTextField();
@@ -280,6 +295,15 @@ private JLabel[] Caballo;
 
         jDialog4.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog4.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jDialog4.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 770, 620, 110));
 
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
@@ -495,6 +519,77 @@ private JLabel[] Caballo;
         jLabel4.setText("jLabel4");
         jDialog6.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jDialog7.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        jDialog7.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        jDialog7.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jDialog7.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.setBackground(new java.awt.Color(24, 17, 12));
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 102, 51)));
+        jScrollPane1.setForeground(new java.awt.Color(230, 195, 120));
+        jScrollPane1.setOpaque(false);
+
+        jTable1.setBackground(new java.awt.Color(222, 200, 161));
+        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(44, 34, 22));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "id_movimientos", "id_usuario", "id_apuesta", "monto", "fecha", "tipo_movimiento"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable1.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        jTable1.setSelectionForeground(new java.awt.Color(51, 51, 51));
+        jTable1.setShowGrid(false);
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(50);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(50);
+            jTable1.getColumnModel().getColumn(1).setMinWidth(50);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(1).setMaxWidth(50);
+            jTable1.getColumnModel().getColumn(2).setMinWidth(50);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(2).setMaxWidth(50);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(60);
+        }
+
+        jDialog7.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 780, 560));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "id_carrera", "fecha_hora", "estado", "ganador"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jDialog7.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 400, -1, -1));
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/fondo historial.png"))); // NOI18N
+        jLabel31.setText("jLabel31");
+        jDialog7.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -690,6 +785,34 @@ jLabel28.setEnabled(false);
     Caballo c3 = new Caballo("Azul", jLabel8, meta, jProgressBar3);
     Caballo c4 = new Caballo("Morado", jLabel5, meta, jProgressBar4);
     Caballo c5 = new Caballo("Verde", jLabel9, meta, jProgressBar5);
+     
+try {
+
+    Connection cn = Conexion.conectar();
+
+    String sql =
+    "INSERT INTO Carreras(fecha_hora,estado) " +
+    "VALUES(NOW(),'En curso')";
+
+    PreparedStatement ps =
+    cn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+
+    ps.executeUpdate();
+
+    ResultSet rs = ps.getGeneratedKeys();
+
+    if(rs.next()) {
+
+        pantalla.idCarreraActual = rs.getInt(1);
+    }
+
+} catch(Exception e) {
+
+    JOptionPane.showMessageDialog(this,
+    "Error creando carrera");
+}
+
+
 
     c1.start();
     c2.start();
@@ -729,6 +852,20 @@ jLabel28.setEnabled(false);
         
         JOptionPane.showMessageDialog(this, "Recarga de " + monto + " Auras completada.");
         jTextField7.setText(""); // Limpiamos el campo
+        
+String sql =
+"INSERT INTO Movimientos(id_usuario,monto,tipo_movimiento) " +
+"VALUES((SELECT id_usuario FROM Usuarios WHERE nombre=?),?,?)";
+
+PreparedStatement ps = conexionReal .prepareStatement(sql);
+
+ps.setString(1, pantalla.usuarioIdentificado);
+ps.setDouble(2, monto);
+ps.setString(3, "Ingreso");
+
+ps.executeUpdate();
+
+
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Error: Introduce un número válido.");
     }
@@ -776,10 +913,28 @@ jLabel28.setEnabled(false);
             // 6. Limpiar el campo y actualizar el label del saldo visualmente
             jTextField8.setText("");
             jLabel14.setText(String.valueOf(pantalla.saldoApp)); 
+            
+        Connection conexionReal = Conexion.conectar();
+
+        String sql =
+"INSERT INTO Movimientos(id_usuario,monto,tipo_movimiento) " +
+"VALUES((SELECT id_usuario FROM Usuarios WHERE nombre=?),?,?)";
+
+PreparedStatement ps = conexionReal.prepareStatement(sql);
+
+ps.setString(1, pantalla.usuarioIdentificado);
+ps.setDouble(2, montoDonado);
+ps.setString(3, "Donacion");
+
+ps.executeUpdate();
+
+
         }
         
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "Error: Introduce un número válido para donar.");
+    } catch (SQLException ex) {
+        Logger.getLogger(pantalla.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_jButton12ActionPerformed
 
@@ -878,6 +1033,14 @@ resetCarrera();
     jDialog1.setVisible(false);
     jDialog5.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel28MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       jDialog7.setVisible(true);
+
+    historial.cargarMovimientos(jTable1, usuarioIdentificado);
+
+    historial.cargarCarreras(jTable2);
+    }//GEN-LAST:event_jButton5ActionPerformed
  private void moverSalida() {
 
     if (!carreraActiva) return;
@@ -976,6 +1139,7 @@ resetCarrera();
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -986,6 +1150,7 @@ resetCarrera();
     private javax.swing.JDialog jDialog4;
     private javax.swing.JDialog jDialog5;
     private javax.swing.JDialog jDialog6;
+    private javax.swing.JDialog jDialog7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1010,6 +1175,7 @@ resetCarrera();
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1022,6 +1188,10 @@ resetCarrera();
     private javax.swing.JProgressBar jProgressBar3;
     private javax.swing.JProgressBar jProgressBar4;
     private javax.swing.JProgressBar jProgressBar5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

@@ -9,6 +9,10 @@ import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+
 
 /**
  *
@@ -85,6 +89,65 @@ public class Caballo extends Thread {
     private void finalizarCarrera(String ganador) {
     // Comprobamos si el usuario apostó por este caballo
     System.out.println("DEBUG -> Ganador Real: '" + ganador + "' | Tu Apuesta: '" + pantalla.caballoApostado + "'");
+    
+    
+try {
+
+    Connection cn = Conexion.conectar();
+
+    // FINALIZAR LA CARRERA
+    String sql1 =
+    "UPDATE Carreras SET estado='Finalizada' " +
+    "WHERE id_carrera=?";
+
+    PreparedStatement ps1 = cn.prepareStatement(sql1);
+
+    ps1.setInt(1, pantalla.idCarreraActual);
+
+    ps1.executeUpdate();
+
+    // OBTENER ID DEL CABALLO GANADOR
+    int idCaballo = 0;
+
+    if (ganador.equalsIgnoreCase("Amarillo")) {
+        idCaballo = 3;
+    }
+
+    if (ganador.equalsIgnoreCase("Rojo")) {
+        idCaballo = 1;
+    }
+
+    if (ganador.equalsIgnoreCase("Azul")) {
+        idCaballo = 4;
+    }
+
+    if (ganador.equalsIgnoreCase("Morado")) {
+        idCaballo = 5;
+    }
+
+    if (ganador.equalsIgnoreCase("Verde")) {
+        idCaballo = 2;
+    }
+
+    // GUARDAR RESULTADO
+    String sql2 =
+    "INSERT INTO Resultados(id_carrera,id_ganador) " +
+    "VALUES(?,?)";
+
+    PreparedStatement ps2 = cn.prepareStatement(sql2);
+
+    ps2.setInt(1, pantalla.idCarreraActual);
+    ps2.setInt(2, idCaballo);
+
+    ps2.executeUpdate();
+
+} catch (Exception e) {
+
+    JOptionPane.showMessageDialog(null,
+    "Error guardando carrera");
+}
+
+
     
     if (ganador.trim().equalsIgnoreCase(pantalla.caballoApostado.trim())) {
         double premio = pantalla.montoApuesta * pantalla.multiplicador;

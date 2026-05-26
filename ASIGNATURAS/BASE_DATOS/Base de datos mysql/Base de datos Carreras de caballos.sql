@@ -103,7 +103,7 @@ CREATE TABLE Movimientos (
     id_apuesta INT NULL, -- Opcional: para saber qué apuesta generó el movimiento
     monto DECIMAL(10, 2) NOT NULL,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    tipo_movimiento ENUM('Ingreso', 'Apuesta', 'Premio', 'Retiro'),
+    tipo_movimiento ENUM('Ingreso', 'Apuesta', 'Premio', 'Donacion'),
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario),
     FOREIGN KEY (id_apuesta) REFERENCES Apuestas(id_apuesta)
 		ON DELETE CASCADE
