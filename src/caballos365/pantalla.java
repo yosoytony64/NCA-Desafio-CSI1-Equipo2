@@ -785,28 +785,28 @@ jLabel28.setEnabled(false);
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
         // TODO add your handling code here:
-        Jugada.seleccionarCaballo(jLabel18, "Caballo Rojo", Caballo);
-                pantalla.caballoApostado = "Caballo Rojo";
+        Jugada.seleccionarCaballo(jLabel18, "Rojo", Caballo);
+                pantalla.caballoApostado = "Rojo";
 
     }//GEN-LAST:event_jLabel18MouseClicked
 
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
         // TODO add your handling code here:
-        Jugada.seleccionarCaballo(jLabel19, "Caballo Verde", Caballo);
-        pantalla.caballoApostado = "Caballo Verde";
+        Jugada.seleccionarCaballo(jLabel19, "Verde", Caballo);
+        pantalla.caballoApostado = "Verde";
 
     }//GEN-LAST:event_jLabel19MouseClicked
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
         // TODO add your handling code here:
-        Jugada.seleccionarCaballo(jLabel20, "Caballo Amarillo", Caballo);
-        pantalla.caballoApostado = "Caballo Amarillo";
+        Jugada.seleccionarCaballo(jLabel20, "Amarillo", Caballo);
+        pantalla.caballoApostado = "Amarillo";
     }//GEN-LAST:event_jLabel20MouseClicked
 
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
         // TODO add your handling code here:
-        Jugada.seleccionarCaballo(jLabel21, "Caballo Azul", Caballo);
-        pantalla.caballoApostado = "Caballo Azul";
+        Jugada.seleccionarCaballo(jLabel21, "Azul", Caballo);
+        pantalla.caballoApostado = "Azul";
 
     }//GEN-LAST:event_jLabel21MouseClicked
 
@@ -852,8 +852,8 @@ jLabel28.setEnabled(false);
 
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
         // TODO add your handling code here:
-        Jugada.seleccionarCaballo(jLabel17, "Caballo Morado", Caballo);
-        pantalla.caballoApostado = "Caballo Morado";
+        Jugada.seleccionarCaballo(jLabel17, "Morado", Caballo);
+        pantalla.caballoApostado = "Morado";
     }//GEN-LAST:event_jLabel17MouseClicked
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed

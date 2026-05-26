@@ -84,8 +84,9 @@ public class Caballo extends Thread {
     
     private void finalizarCarrera(String ganador) {
     // Comprobamos si el usuario apostó por este caballo
+    System.out.println("DEBUG -> Ganador Real: '" + ganador + "' | Tu Apuesta: '" + pantalla.caballoApostado + "'");
     
-    if (ganador.equalsIgnoreCase(pantalla.caballoApostado)) {
+    if (ganador.trim().equalsIgnoreCase(pantalla.caballoApostado.trim())) {
         double premio = pantalla.montoApuesta * pantalla.multiplicador;
         pantalla.saldoApp += premio;
         
@@ -93,7 +94,7 @@ public class Caballo extends Thread {
                 + "Premio: " + premio + " Auras.");
         
         
-    } else {
+    } else {    
         JOptionPane.showMessageDialog(null, "Ha ganado el caballo " + ganador + ".\n"
                 + "Has perdido la carrera.");
         // El saldo se resta al momento de darle a "Correr"
