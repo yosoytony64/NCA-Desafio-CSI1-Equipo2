@@ -24,15 +24,15 @@ public class pantalla extends javax.swing.JFrame {
 
 Conexion con = new Conexion();
 public static String usuarioIdentificado; // Se llenará al hacer Login
-public static double saldoApp = 0.0;
-public static String caballoApostado = ""; 
-public static double montoApuesta = 0.0;
-public static int multiplicador = 2; 
+public static double saldoApp = 0.0;  // variable encargada de guardar el saldo de la app
+public static String caballoApostado = ""; //Guarda el caballo que ha elegido el usuario
+public static double montoApuesta = 0.0; //Guarda cuanta auta a elegido jugar el usuario
+public static int multiplicador = 2; //Variable que multiplica x2 las ganancias(en caso de que gane)
 int progreso = 0;
 int velocidad = 30; // Velocidad constante para ambos objetos
 
 
-
+//Son los encargados de controlar el tiempo y el movimiento de la carrera para que los caballos no se muevan antes de tiempo.
 private Timer timerCarrera;
 private boolean carreraActiva = false;
 
@@ -41,11 +41,11 @@ private JLabel[] Caballo;
 
     public pantalla() {
         initComponents();
-        con.conectar();
-        jLabel22.setText(String.valueOf(pantalla.saldoApp));
-        Caballo = new JLabel[]{jLabel17, jLabel18, jLabel19, jLabel20, jLabel21};
+        con.conectar(); //Variable encargada de conectar la BD
+        jLabel22.setText(String.valueOf(pantalla.saldoApp)); //Jlabel22 es donde se imprime el saldo 
+        Caballo = new JLabel[]{jLabel17, jLabel18, jLabel19, jLabel20, jLabel21};//Guarda y agrupa los caballos
         jLabel27.setEnabled(false);
-jLabel28.setEnabled(false);
+        jLabel28.setEnabled(false);
         
 
     }
@@ -549,16 +549,19 @@ jLabel28.setEnabled(false);
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+    //Este boton se encarga de controlar el inicio de sesion del usuario
     String usuarioInput = jTextField1.getText();
     String passInput = jPasswordField1.getText();
     
+    //Verificacion de campos vacios
     if (!usuarioInput.equals("") && !passInput.equals("")) {
         try {
             Connection conexionReal = Conexion.conectar();
             
-            // Consulta directa a una sola tabla
+            // Consulta directa a una sola tabla, seleccion de tabla
             String sql = "SELECT saldo, nombre FROM Usuarios WHERE (nombre = ? OR email = ?) AND contraseña = ?";
             
+            //Columnas de la tabla
             java.sql.PreparedStatement ps = conexionReal.prepareStatement(sql);
             ps.setString(1, usuarioInput);
             ps.setString(2, usuarioInput);
@@ -587,31 +590,34 @@ jLabel28.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    pantalla obj_pantalla = new pantalla();
+        pantalla obj_pantalla = new pantalla();
         obj_pantalla.setVisible(true);   
         jDialog3.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-     String nombre=jTextField2.getText();
+        //Este boton controla la creacion/registro de usuarios
+
+        //Variables donde se alamacenan los datos del usuario
+        String nombre=jTextField2.getText();
         String edadTexto=jTextField3.getText();
         String email=jTextField5.getText();
         String contraseña=jTextField4.getText();
-
+        
+        //Validacion de campos en blanco
         if (nombre.isEmpty() || edadTexto.isEmpty() || email.isEmpty() || contraseña.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Introduce los datos");
-            
-                
-            
-
         }else{
             try {
         int edad = Integer.parseInt(edadTexto);
-
+        
+        //Restriccion de edad, si eres menor no te deja resgistrarte
         if (edad < 18) {
             JOptionPane.showMessageDialog(null, "Debes ser mayor de edad");
             return;
         }
+        
+        //Conecta la base de datos
             Connection conexionReal = Conexion.conectar();
 
             String consulta = "INSERT INTO usuarios (nombre,edad,email,contraseña)values('"+nombre+"','"+edad+"','"+email+"','"+contraseña+"')";
@@ -706,14 +712,15 @@ jLabel28.setEnabled(false);
     }//GEN-LAST:event_jTextField7ActionPerformed
 
     public void actualizarLabelSaldo() {
-    jLabel14.setText(String.valueOf(this.saldoApp) + " Auras");
+    jLabel14.setText(String.valueOf(this.saldoApp) + " Auras");//Actualiza el saldo
 }
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-      
+      //ESTE BOTON SE ENCARGA DE ACTUALIZAR EL SALDO
     try {
+        //Variable donde guarda el monto
         double monto = Double.parseDouble(jTextField7.getText());
         
-        // 1. Sumamos a la variable de la app
+        // 1. Sumamos a la variable de la app. Suma el antiguo salgo con el monto ganado
         pantalla.saldoApp += monto;
         
         // 2. Guardar en la Base de Datos
