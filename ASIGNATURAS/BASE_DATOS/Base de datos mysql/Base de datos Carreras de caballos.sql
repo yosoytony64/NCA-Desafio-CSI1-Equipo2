@@ -120,8 +120,56 @@ CREATE TABLE Donaciones (
     FOREIGN KEY (id_apuesta) REFERENCES Apuestas(id_apuesta) ON DELETE CASCADE
 );
 
+create table ONGS(
+	id_ong int auto_increment primary key,
+    nombre varchar(100),
+    area varchar(100),
+    donacion_total varchar(100)
+);
+insert into ONGS(id_ong, nombre, area, donacion_total) 
+values( 1, "Medicos sin fronteras","Salud","2.400M");
 
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (2, 'Cruz Roja', 'Emergencias', '1.80M');
 
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total) 
+VALUES (3, 'UNICEF', 'Infancia', '300M'); 
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total) 
+VALUES (4, 'WWF', 'Medio Ambiente', '1.200M'); 
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total) 
+VALUES (5, 'Save the Children', 'Educacion', '9.50M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (6, 'Amnesty International', 'Derechos Humanos', '850M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (7, 'Greenpeace', 'Medio Ambiente', '1.500M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (8, 'Oxfam', 'Pobreza y Desarrollo', '2.100M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (9, 'World Vision', 'Infancia y Desarrollo', '980M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (10, 'Caritas', 'Asistencia Social', '1.750M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (11, 'Doctors of the World', 'Salud', '620M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (12, 'Mercy Corps', 'Ayuda Humanitaria', '1.300M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (13, 'ActionAid', 'Pobreza y Justicia Social', '540M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (14, 'Plan International', 'Infancia', '1.100M');
+
+INSERT INTO ONGS (id_ong, nombre, area, donacion_total)
+VALUES (15, 'Habitat for Humanity', 'Vivienda', '770M');
 -- CAMBIOS/MODIFICACIONES BASE DATOS
 select * from administradores;
 SELECT * FROM Usuarios;
@@ -170,3 +218,271 @@ ALTER TABLE clientes
 ALTER COLUMN saldo SET DEFAULT 500.0;
 ALTER TABLE Usuarios ADD COLUMN saldo DECIMAL(10,2) DEFAULT 500.0;
 ALTER TABLE Clientes DROP COLUMN saldo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- consultas
+
+-- 1. Mostrar todas las ONGs registradas
+SELECT * 
+FROM ONGS;
+
+
+-- 2. Mostrar solo el nombre y el área de cada ONG
+SELECT nombre, area 
+FROM ONGS;
+
+
+-- 3. Obtener todas las ONGs que pertenecen al área de Salud
+SELECT * 
+FROM ONGS
+WHERE area = 'Salud';
+
+
+-- 4. Buscar ONGs cuyo área contenga la palabra "Infancia"
+SELECT * 
+FROM ONGS
+WHERE area LIKE '%Infancia%';
+
+
+-- 5. Ordenar las ONGs alfabéticamente por nombre
+SELECT * 
+FROM ONGS
+ORDER BY nombre ASC;
+
+
+-- 6. Ordenar las ONGs por donación total (orden descendente)
+-- NOTA: se ordena como texto porque el campo es VARCHAR
+SELECT * 
+FROM ONGS
+ORDER BY donacion_total DESC;
+
+
+-- 7. Contar el número total de ONGs registradas
+SELECT COUNT(*) AS total_ongs 
+FROM ONGS;
+
+
+-- 8. Mostrar los nombres de las ONGs del área "Medio Ambiente"
+SELECT nombre 
+FROM ONGS
+WHERE area = 'Medio Ambiente';
+
+
+-- 9. Buscar una ONG específica por su nombre (UNICEF)
+SELECT * 
+FROM ONGS
+WHERE nombre = 'UNICEF';
+
+
+-- 10. Mostrar las ONGs que NO pertenecen al área de Salud
+SELECT * FROM ONGS
+WHERE area <> 'Salud';
+
+
+-- 11. Mostrar ONGs cuyo nombre comienza con la letra "M"
+SELECT * 
+FROM ONGS
+WHERE nombre LIKE 'M%';
+
+
+-- 12. Agrupar ONGs por área y contar cuántas hay en cada una
+SELECT area, COUNT(*) AS cantidad
+FROM ONGS
+GROUP BY area;
+
+
+-- 13. Buscar ONGs con donaciones que contienen "1." (simulación)
+-- NOTA: esto es solo una aproximación porque el campo es texto
+SELECT * 
+FROM ONGS
+WHERE donacion_total LIKE '%1.%';
+
+-- 14. Mostrar la ONG con la mayor donación (usando subconsulta)
+SELECT * FROM ONGS
+WHERE donacion_total = (
+    SELECT MAX(donacion_total) FROM ONGS
+);
+
+
+-- 15. Mostrar ONGs que tienen la misma área que UNICEF
+SELECT * FROM ONGS
+WHERE area = (
+    SELECT area FROM ONGS
+    WHERE nombre = 'UNICEF'
+);
+
+
+-- 16. Mostrar ONGs cuya donación es mayor que la de "Cruz Roja"
+SELECT * FROM ONGS
+WHERE donacion_total > (
+    SELECT donacion_total FROM ONGS
+    WHERE nombre = 'Cruz Roja'
+);
+
+
+-- 17. Mostrar ONGs que pertenecen a áreas con más de una ONG
+SELECT * FROM ONGS
+WHERE area IN (
+    SELECT area FROM ONGS
+    GROUP BY area
+    HAVING COUNT(*) > 1
+);
+
+
+-- 18. Mostrar ONGs que NO están en el área de Salud (usando subconsulta)
+SELECT * FROM ONGS
+WHERE area NOT IN (
+    SELECT area FROM ONGS
+    WHERE area = 'Salud'
+);
+
+
+-- 19. Mostrar ONGs cuya donación es igual al promedio (simulado)
+SELECT * FROM ONGS
+WHERE donacion_total = (
+    SELECT AVG(donacion_total) FROM ONGS
+);
+
+
+-- 20. Mostrar ONGs que tienen la misma donación que otra ONG
+SELECT * FROM ONGS
+WHERE donacion_total IN (
+    SELECT donacion_total FROM ONGS
+    GROUP BY donacion_total
+    HAVING COUNT(*) > 1
+);
+
+
+-- 21. Mostrar la ONG con la menor donación
+SELECT * FROM ONGS
+WHERE donacion_total = (
+    SELECT MIN(donacion_total) FROM ONGS
+);
+
+
+-- 22. Mostrar ONGs cuya área está entre las más repetidas
+SELECT * FROM ONGS
+WHERE area IN (
+    SELECT area FROM ONGS
+    GROUP BY area
+    ORDER BY COUNT(*) DESC
+    LIMIT 3
+);
+
+-- 23. CREAR USUARIO
+CREATE USER 'usuario_ong'@'localhost' IDENTIFIED BY '1234';
+
+
+-- 24. CREAR ROL
+CREATE ROLE 'rol_ong';
+
+
+-- 25. ASIGNAR PRIVILEGIOS AL ROL
+GRANT SELECT, INSERT ON ONGS TO 'rol_ong';
+
+
+-- 26. ASIGNAR ROL AL USUARIO
+GRANT 'rol_ong' TO 'usuario_ong';
+
+
+-- 27. ACTIVAR ROL POR DEFECTO
+SET DEFAULT ROLE 'rol_ong' TO 'usuario_ong';
+
+
+-- 28. CREAR VISTA DE ONGS DE SALUD
+CREATE VIEW vista_salud AS
+SELECT nombre, area, donacion_total
+FROM ONGS
+WHERE area = 'Salud';
+
+
+-- 29. CONSULTAR VISTA DE SALUD
+SELECT * FROM vista_salud;
+
+
+-- 30. CREAR VISTA DE DONACIONES ALTAS
+CREATE VIEW vista_donaciones_altas AS
+SELECT nombre, donacion_total
+FROM ONGS
+WHERE donacion_total LIKE '1.%';
+
+
+-- 31. CREAR ÍNDICE POR NOMBRE
+CREATE INDEX idx_nombre ON ONGS(nombre);
+
+
+-- 32. CREAR ÍNDICE POR ÁREA
+CREATE INDEX idx_area ON ONGS(area);
+
+
+-- 33. PROCEDIMIENTO: ONGS POR ÁREA
+DELIMITER //
+
+CREATE PROCEDURE obtenerONGsPorArea(IN areaBuscada VARCHAR(100))
+BEGIN
+    SELECT * FROM ONGS
+    WHERE area = areaBuscada;
+END //
+
+DELIMITER ;
+
+
+-- 34. EJECUTAR PROCEDIMIENTO
+CALL obtenerONGsPorArea('Salud');
+
+
+-- 35. TRIGGER: VALIDAR NOMBRE NO VACÍO
+DELIMITER //
+
+CREATE TRIGGER validar_nombre
+BEFORE INSERT ON ONGS
+FOR EACH ROW
+BEGIN
+    IF NEW.nombre = '' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'El nombre no puede estar vacío';
+    END IF;
+END //
+
+DELIMITER ;
+
+
+-- 36. FUNCIÓN: CONTAR ONGS POR ÁREA
+DELIMITER //
+
+CREATE FUNCTION contarONGs(areaBuscada VARCHAR(100))
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE total INT;
+
+    SELECT COUNT(*) INTO total
+    FROM ONGS
+    WHERE area = areaBuscada;
+
+    RETURN total;
+END //
+
+DELIMITER ;
+
+
+-- 37. USAR FUNCIÓN
+SELECT contarONGs('Salud');
+
