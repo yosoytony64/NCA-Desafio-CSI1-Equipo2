@@ -23,6 +23,7 @@ import javax.swing.Timer;
 
 public class pantalla extends javax.swing.JFrame {
 
+Musica_de_chill obj_chill = new Musica_de_chill();
 Conexion con = new Conexion();
 public static String usuarioIdentificado; // Se llenará al hacer Login
 public static double saldoApp = 0.0;  // variable encargada de guardar el saldo de la app
@@ -108,6 +109,7 @@ private JLabel[] Caballo;
         jButton6 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
+        gg = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jDialog5 = new javax.swing.JDialog();
         jTextField6 = new javax.swing.JTextField();
@@ -343,6 +345,16 @@ private JLabel[] Caballo;
         });
         jDialog4.getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 600, 640, 140));
 
+        gg.setBorderPainted(false);
+        gg.setContentAreaFilled(false);
+        gg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ggActionPerformed(evt);
+            }
+        });
+        jDialog4.getContentPane().add(gg, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 920, 620, 110));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/MenuPrincipal1920 (1).png"))); // NOI18N
         jLabel2.setText("jLabel2");
         jDialog4.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 1090));
@@ -499,7 +511,6 @@ private JLabel[] Caballo;
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Aura (1).jpg"))); // NOI18N
         jDialog6.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 370, 100, 90));
 
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
         jTextField7.setFont(new java.awt.Font("Palatino Linotype", 0, 24)); // NOI18N
         jTextField7.setForeground(new java.awt.Color(51, 51, 51));
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -520,7 +531,6 @@ private JLabel[] Caballo;
         });
         jDialog6.getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 680, 570, 80));
 
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
         jTextField8.setFont(new java.awt.Font("Palatino Linotype", 0, 24)); // NOI18N
         jTextField8.setForeground(new java.awt.Color(51, 51, 51));
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -530,9 +540,7 @@ private JLabel[] Caballo;
         jLabel4.setText("jLabel4");
         jDialog6.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jDialog7.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog7.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        jDialog7.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog7.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setBackground(new java.awt.Color(24, 17, 12));
@@ -1102,6 +1110,10 @@ resetCarrera();
  jDialog7.setVisible(false);    
  jDialog4.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void ggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ggActionPerformed
+        obj_chill.setVisible(true);
+    }//GEN-LAST:event_ggActionPerformed
  private void moverSalida() {
      
      //metodo que sirve para mover la salida y la meta en la carrera
@@ -1197,6 +1209,7 @@ resetCarrera();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton gg;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
