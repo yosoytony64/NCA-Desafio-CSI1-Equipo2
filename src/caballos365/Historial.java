@@ -17,17 +17,14 @@ import javax.swing.JOptionPane;
  */
 public class Historial {
 
-    // =========================
-    // TABLA MOVIMIENTOS
-    // =========================
-    
+    //Para la tabla de movimientos
     public void cargarMovimientos(JTable tabla, String usuario) {
 
         DefaultTableModel modelo = new DefaultTableModel();
-
+        
+        //Añadmios las columnas que queremos
         modelo.addColumn("ID");
         modelo.addColumn("Usuario");
-        modelo.addColumn("Apuesta");
         modelo.addColumn("Monto");
         modelo.addColumn("Fecha");
         modelo.addColumn("Tipo");
@@ -35,7 +32,8 @@ public class Historial {
         tabla.setModel(modelo);
 
         try {
-
+            
+            //conectamos con la base de datos
             Connection cn = Conexion.conectar();
 
             String sql =
@@ -51,16 +49,23 @@ public class Historial {
             while (rs.next()) {
 
                 Object[] fila = new Object[6];
-
+                
+                //metemos la información de la BD dentro de las filas
                 fila[0] = rs.getInt("id_movimientos");
                 fila[1] = rs.getInt("id_usuario");
-                fila[2] = rs.getInt("id_apuesta");
-                fila[3] = rs.getDouble("monto");
-                fila[4] = rs.getTimestamp("fecha");
-                fila[5] = rs.getString("tipo_movimiento");
+                fila[2] = rs.getDouble("monto");
+                fila[3] = rs.getTimestamp("fecha");
+                fila[4] = rs.getString("tipo_movimiento");
 
                 modelo.addRow(fila);
             }
+            //cambiamos el tamaño de las columnas
+            tabla.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+            tabla.getColumnModel().getColumn(0).setPreferredWidth(60);   
+            tabla.getColumnModel().getColumn(1).setPreferredWidth(90);   
+            tabla.getColumnModel().getColumn(2).setPreferredWidth(100);  
+            tabla.getColumnModel().getColumn(3).setPreferredWidth(260);  
+            tabla.getColumnModel().getColumn(4).setPreferredWidth(260);  
 
         } catch (Exception e) {
 
@@ -69,12 +74,11 @@ public class Historial {
         }
     }
 
-    // =========================
-    // TABLA CARRERAS
-    // =========================
+    //Para la tabla de las  Carreras
     
     public void cargarCarreras(JTable tabla) {
-
+        
+        //Creamos la tabla y las columnas
         DefaultTableModel modelo = new DefaultTableModel();
 
         modelo.addColumn("Carrera");
@@ -85,7 +89,8 @@ public class Historial {
         tabla.setModel(modelo);
 
         try {
-
+            
+                //conectamos con la base de datos
             Connection cn = Conexion.conectar();
 
             String sql =
@@ -100,7 +105,8 @@ public class Historial {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-
+                
+                //metemos la información de la base de datos en las filas
                 Object[] fila = new Object[4];
 
                 fila[0] = rs.getInt("id_carrera");
@@ -109,7 +115,15 @@ public class Historial {
                 fila[3] = rs.getString("ganador");
 
                 modelo.addRow(fila);
+                
             }
+            
+            //Cambiamos el tamaño de las columnas
+            tabla.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+            tabla.getColumnModel().getColumn(0).setPreferredWidth(70);  
+            tabla.getColumnModel().getColumn(1).setPreferredWidth(210);
+            tabla.getColumnModel().getColumn(2).setPreferredWidth(110); 
+            tabla.getColumnModel().getColumn(3).setPreferredWidth(350); 
 
         } catch (Exception e) {
 

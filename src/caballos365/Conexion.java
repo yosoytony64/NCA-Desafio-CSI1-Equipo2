@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package caballos365;
-import java.sql.Connection; // Usa la interfaz estándar
+import java.sql.Connection; 
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -19,7 +19,7 @@ public class Conexion {
     public static Connection conectar() {
     Connection con = null;
     try {
-        // Forzamos el driver por si acaso
+       
         
         con = DriverManager.getConnection(url, user, pass);
         System.out.println("Conexión exitosa");
@@ -27,6 +27,6 @@ public class Conexion {
         e.printStackTrace();
         System.out.println("Error interno: " + e.getMessage());
     }
-    return con; // Si falla, devuelve null
+    return con; 
 }
 }
