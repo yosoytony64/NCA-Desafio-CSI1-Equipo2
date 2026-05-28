@@ -94,70 +94,57 @@ public class Musica_de_chill extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         Play = new javax.swing.JButton();
         Pausar = new javax.swing.JButton();
         Stop = new javax.swing.JButton();
         jSlider1 = new javax.swing.JSlider();
         jScrollPane1 = new javax.swing.JScrollPane();
         lista = new javax.swing.JList<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1340, 1070));
+        setMinimumSize(new java.awt.Dimension(1340, 1070));
+        setPreferredSize(new java.awt.Dimension(1340, 1070));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 36)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("MUSICA chill");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 400, 70));
-
-        jPanel1.setBackground(new java.awt.Color(255, 153, 0));
-        jPanel1.setForeground(new java.awt.Color(204, 255, 255));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, -1));
-
-        Play.setText("Play");
+        Play.setBorderPainted(false);
+        Play.setContentAreaFilled(false);
         Play.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PlayActionPerformed(evt);
             }
         });
-        getContentPane().add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, -1));
+        getContentPane().add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 160, 60));
 
-        Pausar.setText("Pausar");
+        Pausar.setBorderPainted(false);
+        Pausar.setContentAreaFilled(false);
         Pausar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PausarActionPerformed(evt);
             }
         });
-        getContentPane().add(Pausar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, -1, -1));
+        getContentPane().add(Pausar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 230, 150, 70));
 
-        Stop.setText("Stop");
+        Stop.setBorderPainted(false);
+        Stop.setContentAreaFilled(false);
         Stop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StopActionPerformed(evt);
             }
         });
-        getContentPane().add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
+        getContentPane().add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 180, 60));
 
+        jSlider1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jSlider1.setOpaque(true);
         jSlider1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jSlider1MouseDragged(evt);
             }
         });
-        getContentPane().add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, -1, -1));
+        getContentPane().add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 780, 440, 60));
 
+        lista.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         lista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Minero", "Subeme_de_copas", "pikacancion" };
             public int getSize() { return strings.length; }
@@ -165,7 +152,10 @@ public class Musica_de_chill extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lista);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 380, 200));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 380, 200));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/musicaapp (1).png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1340, 1080));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -257,8 +247,7 @@ public class Musica_de_chill extends javax.swing.JFrame {
     private javax.swing.JButton Pausar;
     private javax.swing.JButton Play;
     private javax.swing.JButton Stop;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JList<String> lista;
