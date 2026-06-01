@@ -150,10 +150,8 @@ private JLabel[] Caballo;
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jDialog1.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog1.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog1.setUndecorated(true);
-        jDialog1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jProgressBar1.setBackground(new java.awt.Color(204, 204, 204));
@@ -247,18 +245,14 @@ private JLabel[] Caballo;
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caballos365/fondo barras de progresored.png"))); // NOI18N
         jDialog1.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, -1, 540));
 
-        jDialog2.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog2.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog2.setUndecorated(true);
-        jDialog2.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         jLabel3.setText("ADMIN");
         jDialog2.getContentPane().add(jLabel3, java.awt.BorderLayout.CENTER);
 
-        jDialog3.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog3.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog3.setUndecorated(true);
-        jDialog3.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog3.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField3.setBackground(new java.awt.Color(74, 47, 29));
@@ -313,10 +307,8 @@ private JLabel[] Caballo;
         jLabel10.setText("jLabel10");
         jDialog3.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jDialog4.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog4.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog4.setUndecorated(true);
-        jDialog4.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog4.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton5.setBorderPainted(false);
@@ -373,7 +365,6 @@ private JLabel[] Caballo;
         jLabel2.setText("jLabel2");
         jDialog4.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1080));
 
-        jDialog5.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog5.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog5.setUndecorated(true);
         jDialog5.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -487,10 +478,8 @@ private JLabel[] Caballo;
         jLabel33.setText("jLabel33");
         jDialog5.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 1040, -1, -1));
 
-        jDialog6.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog6.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog6.setUndecorated(true);
-        jDialog6.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog6.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
@@ -565,10 +554,8 @@ private JLabel[] Caballo;
         jLabel4.setText("jLabel4");
         jDialog6.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jDialog7.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jDialog7.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jDialog7.setUndecorated(true);
-        jDialog7.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jDialog7.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setBackground(new java.awt.Color(24, 17, 12));
