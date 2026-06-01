@@ -103,9 +103,7 @@ public class Musica_de_chill extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1340, 1070));
         setMinimumSize(new java.awt.Dimension(1340, 1070));
-        setPreferredSize(new java.awt.Dimension(1340, 1070));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Play.setBorderPainted(false);
@@ -146,7 +144,7 @@ public class Musica_de_chill extends javax.swing.JFrame {
 
         lista.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         lista.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Minero", "Subeme_de_copas", "pikacancion" };
+            String[] strings = { "Minero", "Subeme_de_copas", "pikacancion", "Los-peces-en-el-rio", "Mi-burrito-sabanero", "Ozuna", "Feliz Navidad", "ginger beell" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
