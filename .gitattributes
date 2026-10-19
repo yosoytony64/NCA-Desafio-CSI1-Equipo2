@@ -1,0 +1,57 @@
+*.css           text diff=css
+*.scss          text diff=css
+*.sass          text
+*.df            text
+*.htm           text diff=html
+*.html          text diff=html
+*.js            text
+*.mjs           text
+*.cjs           text
+*.jsp           text
+*.jspf          text
+*.jspx          text
+*.properties    text
+*.tld           text
+*.tag           text
+*.tagx          text
+*.xml           text
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.class         binary
+*.dll           binary
+*.ear           binary
+*.jar           binary
+*.so            binary
+*.war           binary
+*.jks           binary
+
+# Common build-tool wrapper scripts ('.cmd' versions are handled by 'Common.gitattributes')
+mvnw            text eol=lf
+gradlew         text eol=lf
+
+# These are explicitly windows files and should use crlf
+*.bat           text eol=crlf
+# Convierte los finales de linea automaticamente y usa CRLF en Windows
+* text=auto eol=crlf
+# Archivos de codigo fuente Java
+*.java text diff=java
+# Archivos de configuracion y recursos
+*.xml text
+*.properties text
+*.gradle text
+*.mf text
+*.txt text
+*.md text
+# Archivos de scripts
+*.bat text eol=crlf
+*.sh text eol=lf
+# Archivos binarios (no deben tratarse como texto)
+*.jar binary
+*.class binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary
+*.exe binary

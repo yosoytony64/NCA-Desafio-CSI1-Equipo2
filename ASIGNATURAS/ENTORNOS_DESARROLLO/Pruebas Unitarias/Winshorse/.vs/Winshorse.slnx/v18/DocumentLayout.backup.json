@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F51904D-BB7F-4324-B700-BF4DAC84CFDE}|Winshorse.test\\Winshorse.test.csproj|c:\\users\\jorge\\source\\repos\\winshorse\\winshorse.test\\premiojugadatests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F51904D-BB7F-4324-B700-BF4DAC84CFDE}|Winshorse.test\\Winshorse.test.csproj|solutionrelative:winshorse.test\\premiojugadatests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|c:\\users\\jorge\\source\\repos\\winshorse\\winshorse\\premiojugada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|solutionrelative:winshorse\\premiojugada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F51904D-BB7F-4324-B700-BF4DAC84CFDE}|Winshorse.test\\Winshorse.test.csproj|c:\\users\\jorge\\source\\repos\\winshorse\\winshorse.test\\gestorjugadatests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F51904D-BB7F-4324-B700-BF4DAC84CFDE}|Winshorse.test\\Winshorse.test.csproj|solutionrelative:winshorse.test\\gestorjugadatests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F51904D-BB7F-4324-B700-BF4DAC84CFDE}|Winshorse.test\\Winshorse.test.csproj|c:\\users\\jorge\\source\\repos\\winshorse\\winshorse.test\\gestorusuariotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F51904D-BB7F-4324-B700-BF4DAC84CFDE}|Winshorse.test\\Winshorse.test.csproj|solutionrelative:winshorse.test\\gestorusuariotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|c:\\users\\jorge\\source\\repos\\winshorse\\winshorse\\gestorjugada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|solutionrelative:winshorse\\gestorjugada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|c:\\users\\jorge\\source\\repos\\winshorse\\winshorse\\gestorusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|solutionrelative:winshorse\\gestorusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|c:\\users\\jorge\\source\\repos\\winshorse\\winshorse\\winshorse.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|solutionrelative:winshorse\\winshorse.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|c:\\users\\jorge\\source\\repos\\winshorse\\winshorse\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AA85521-F263-41D7-A342-F5EDC02F1168}|Winshorse\\Winshorse.csproj|solutionrelative:winshorse\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F51904D-BB7F-4324-B700-BF4DAC84CFDE}|Winshorse.test\\Winshorse.test.csproj|c:\\users\\jorge\\source\\repos\\winshorse\\winshorse.test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F51904D-BB7F-4324-B700-BF4DAC84CFDE}|Winshorse.test\\Winshorse.test.csproj|solutionrelative:winshorse.test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PremioJugada.cs",
+              "DocumentMoniker": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\PremioJugada.cs",
+              "RelativeDocumentMoniker": "Winshorse\\PremioJugada.cs",
+              "ToolTip": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\PremioJugada.cs*",
+              "RelativeToolTip": "Winshorse\\PremioJugada.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T09:24:06.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PremioJugadaTests.cs",
+              "DocumentMoniker": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse.test\\PremioJugadaTests.cs",
+              "RelativeDocumentMoniker": "Winshorse.test\\PremioJugadaTests.cs",
+              "ToolTip": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse.test\\PremioJugadaTests.cs*",
+              "RelativeToolTip": "Winshorse.test\\PremioJugadaTests.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAADgvxsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T09:23:50.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GestorJugadaTests.cs",
+              "DocumentMoniker": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse.test\\GestorJugadaTests.cs",
+              "RelativeDocumentMoniker": "Winshorse.test\\GestorJugadaTests.cs",
+              "ToolTip": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse.test\\GestorJugadaTests.cs",
+              "RelativeToolTip": "Winshorse.test\\GestorJugadaTests.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwCsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T09:23:33.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GestorUsuarioTests.cs",
+              "DocumentMoniker": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse.test\\GestorUsuarioTests.cs",
+              "RelativeDocumentMoniker": "Winshorse.test\\GestorUsuarioTests.cs",
+              "ToolTip": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse.test\\GestorUsuarioTests.cs*",
+              "RelativeToolTip": "Winshorse.test\\GestorUsuarioTests.cs*",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T09:23:15.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GestorJugada.cs",
+              "DocumentMoniker": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\GestorJugada.cs",
+              "RelativeDocumentMoniker": "Winshorse\\GestorJugada.cs",
+              "ToolTip": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\GestorJugada.cs",
+              "RelativeToolTip": "Winshorse\\GestorJugada.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T09:20:57.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GestorUsuarios.cs",
+              "DocumentMoniker": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\GestorUsuarios.cs",
+              "RelativeDocumentMoniker": "Winshorse\\GestorUsuarios.cs",
+              "ToolTip": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\GestorUsuarios.cs",
+              "RelativeToolTip": "Winshorse\\GestorUsuarios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T09:17:27.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Winshorse",
+              "DocumentMoniker": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\Winshorse.csproj",
+              "RelativeDocumentMoniker": "Winshorse\\Winshorse.csproj",
+              "ToolTip": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\Winshorse.csproj",
+              "RelativeToolTip": "Winshorse\\Winshorse.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-20T09:16:52.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse.test\\Program.cs",
+              "RelativeDocumentMoniker": "Winshorse.test\\Program.cs",
+              "ToolTip": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse.test\\Program.cs",
+              "RelativeToolTip": "Winshorse.test\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T09:12:48.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\Program.cs",
+              "RelativeDocumentMoniker": "Winshorse\\Program.cs",
+              "ToolTip": "C:\\Users\\Jorge\\source\\repos\\Winshorse\\Winshorse\\Program.cs",
+              "RelativeToolTip": "Winshorse\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T09:10:52.895Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

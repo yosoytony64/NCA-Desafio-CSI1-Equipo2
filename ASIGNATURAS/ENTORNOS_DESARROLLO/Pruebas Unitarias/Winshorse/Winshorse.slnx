@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Winshorse.test/Winshorse.test.csproj" />
+  <Project Path="Winshorse/Winshorse.csproj" />
+</Solution>

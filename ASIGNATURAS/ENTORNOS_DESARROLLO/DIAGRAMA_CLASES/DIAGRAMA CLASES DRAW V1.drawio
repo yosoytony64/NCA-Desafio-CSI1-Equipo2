@@ -1,0 +1,67 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Página-1" id="Czmr2Ndg80aLK8k3238B">
+    <mxGraphModel dx="1226" dy="1905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-1" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="PERSONA&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="160" x="120" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-2" parent="k9s-WlqZ7-878ZYrNhOc-1" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="+id: int&lt;br&gt;+Nombre: String&lt;br&gt;+email: String&lt;div&gt;+edad: int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-9" edge="1" parent="1" source="k9s-WlqZ7-878ZYrNhOc-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="k9s-WlqZ7-878ZYrNhOc-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-6" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" value="Entity" vertex="1">
+          <mxGeometry height="40" width="160" x="120" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-7" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="CLIENTE" vertex="1">
+          <mxGeometry height="120" width="160" x="120" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-8" parent="k9s-WlqZ7-878ZYrNhOc-7" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="+username: String&lt;br&gt;+saldo: double&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-10" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="&lt;div&gt;APUESTA&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="160" x="460" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-11" parent="k9s-WlqZ7-878ZYrNhOc-10" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="+idApuesta: int&lt;br&gt;+idCliente:cliente&lt;br&gt;+idCarrera: carrera&lt;div&gt;+idCaballo:caballo&lt;/div&gt;&lt;div&gt;+monto: double&lt;/div&gt;&lt;div&gt;+estado:String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-12" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" value="+CalcularMonto()" vertex="1">
+          <mxGeometry height="40" width="160" x="460" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-16" edge="1" parent="1" source="k9s-WlqZ7-878ZYrNhOc-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.026;entryY=0.356;entryDx=0;entryDy=0;entryPerimeter=0;" target="k9s-WlqZ7-878ZYrNhOc-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-26" edge="1" parent="1" source="k9s-WlqZ7-878ZYrNhOc-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="k9s-WlqZ7-878ZYrNhOc-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-17" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="&lt;div&gt;CABALLO&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="160" x="670" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-18" parent="k9s-WlqZ7-878ZYrNhOc-17" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="+idCaballlo: int&lt;br&gt;+Nombre: String&lt;br&gt;+edad: int&lt;div&gt;+cuota: double&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-19" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" value="+actualizarCuota()" vertex="1">
+          <mxGeometry height="40" width="160" x="670" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-21" edge="1" parent="1" source="k9s-WlqZ7-878ZYrNhOc-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="k9s-WlqZ7-878ZYrNhOc-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-23" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="&lt;div&gt;CARRERA&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="160" x="413" y="-100" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-24" parent="k9s-WlqZ7-878ZYrNhOc-23" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="+idCarrera: int&lt;br&gt;+ganador: Caballo&lt;div&gt;+cantidadCaballos: int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-25" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" value="Entity" vertex="1">
+          <mxGeometry height="40" width="160" x="413" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="k9s-WlqZ7-878ZYrNhOc-28" parent="1" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.35;dx=50;direction=north;notch=0;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="190" y="290" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

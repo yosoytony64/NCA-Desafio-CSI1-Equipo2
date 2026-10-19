@@ -1,0 +1,178 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package caballos365;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JProgressBar;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+
+
+/**
+ *
+ * @author Jorge
+ */
+public class Caballo extends Thread {
+    private String nombre;
+    private JLabel imagen; // El JLabel con el GIF
+    private int meta;      // La coordenada X de la meta
+    private static boolean hayGanador = false;
+    private JProgressBar barra;
+    
+    public Caballo(String nombre, JLabel imagen, int meta, JProgressBar barra) {
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.meta = meta;
+        this.barra = barra;
+}
+    
+    public void run() {
+    double xActual = imagen.getX();
+    int y = imagen.getY();
+    
+    // Velocidad inicial base
+    double velocidadActual = 1.0; 
+    int contador = 0;
+    int duracionRacha = (int)(Math.random() * 100) + 50; // Cuánto tiempo mantendrá el ritmo
+
+    while (xActual < meta && !hayGanador) {
+        barra.setValue((int) xActual); 
+        
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Caballo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            // 1. CADA CIERTO TIEMPO (RACHA LARGA), EL CABALLO CAMBIA DE RITMO
+            if (contador >= duracionRacha) {
+                // nueva velocidad para los próximos segundos
+                // Unos caballos irán a 0.5 (muy lentos) y otros a 2.3 (rápidos)
+                double nuevaVelocidad = (Math.random() * 4.0) + 0.5;
+                
+                // Actualizamos la duración de la próxima racha
+                duracionRacha = (int)(Math.random() * 50) + 20;
+                contador = 0;
+                
+                // Suavizamos el cambio de velocidad, asi no pegara tiro)
+                velocidadActual = (velocidadActual + nuevaVelocidad) / 2;
+            }
+
+            // 2. MOVIMIENTO CONSTANTE
+            xActual += velocidadActual;
+            imagen.setLocation((int) xActual, y);
+
+            imagen.getParent().repaint();
+            contador++;
+            Thread.sleep(20); // Fluidez total
+
+        } catch (InterruptedException e) {
+            break;
+        }
+    }
+        if (xActual >= meta && !hayGanador) {
+        hayGanador = true; // Bloqueamos a los demás hilos
+        
+        // Llamamos a una función para repartir premios
+        finalizarCarrera(this.nombre); 
+    }
+    }   
+    
+    
+    
+    private void finalizarCarrera(String ganador) {
+    // Comprobamos si el usuario apostó por este caballo
+    System.out.println("DEBUG -> Ganador Real: '" + ganador + "' | Tu Apuesta: '" + pantalla.caballoApostado + "'");
+    
+    
+try {
+
+    Connection cn = Conexion.conectar();
+
+    // FINALIZAR LA CARRERA
+    String sql1 =
+    "UPDATE Carreras SET estado='Finalizada' " +
+    "WHERE id_carrera=?";
+
+    PreparedStatement ps1 = cn.prepareStatement(sql1);
+
+    ps1.setInt(1, pantalla.idCarreraActual);
+
+    ps1.executeUpdate();
+
+    // OBTENER ID DEL CABALLO GANADOR
+    int idCaballo = 0;
+
+    if (ganador.equalsIgnoreCase("Amarillo")) {
+        idCaballo = 3;
+    }
+
+    if (ganador.equalsIgnoreCase("Rojo")) {
+        idCaballo = 1;
+    }
+
+    if (ganador.equalsIgnoreCase("Azul")) {
+        idCaballo = 4;
+    }
+
+    if (ganador.equalsIgnoreCase("Morado")) {
+        idCaballo = 5;
+    }
+
+    if (ganador.equalsIgnoreCase("Verde")) {
+        idCaballo = 2;
+    }
+
+    // GUARDAR RESULTADO
+    String sql2 =
+    "INSERT INTO Resultados(id_carrera,id_ganador) " +
+    "VALUES(?,?)";
+
+    PreparedStatement ps2 = cn.prepareStatement(sql2);
+
+    ps2.setInt(1, pantalla.idCarreraActual);
+    ps2.setInt(2, idCaballo);
+
+    ps2.executeUpdate();
+
+} catch (Exception e) {
+
+    JOptionPane.showMessageDialog(null,
+    "Error guardando carrera");
+}
+
+
+    
+    if (ganador.trim().equalsIgnoreCase(pantalla.caballoApostado.trim())) {
+        double premio = pantalla.montoApuesta * pantalla.multiplicador;
+        pantalla.saldoApp += premio;
+        
+        JOptionPane.showMessageDialog(null, "¡GANASTE! El caballo " + ganador + " llegó primero.\n"
+                + "Premio: " + premio + " Auras.");
+        
+        
+    } else {    
+        JOptionPane.showMessageDialog(null, "Ha ganado el caballo " + ganador + ".\n"
+                + "Has perdido la carrera.");
+        // El saldo se resta al momento de darle a "Correr"
+    }
+
+    // Actualizamos la base de datos inmediatamente
+    actualizarSaldoBD db = new actualizarSaldoBD(); 
+    db.actualizarSaldo(pantalla.usuarioIdentificado, pantalla.saldoApp);
+    
+    // Resetear para la siguiente carrera
+    hayGanador = false; 
+}
+    
+}
+
+
+
+
